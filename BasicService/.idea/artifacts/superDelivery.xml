@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="superDelivery">
+    <output-path>$PROJECT_DIR$/classes/artifacts/superDelivery</output-path>
+    <root id="archive" name="superDelivery.jar" />
+  </artifact>
+</component>

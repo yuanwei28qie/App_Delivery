@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxSdUserMemberMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxSdUserMember" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="servicescor" property="servicescor" jdbcType="INTEGER" />
+    <result column="levelscore" property="levelscore" jdbcType="INTEGER" />
+    <result column="createtime" property="createtime" jdbcType="INTEGER" />
+    <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="openid_qq" property="openidQq" jdbcType="VARCHAR" />
+    <result column="openid_wx" property="openidWx" jdbcType="VARCHAR" />
+    <result column="finance_id" property="financeId" jdbcType="BIGINT" />
+    <result column="referee" property="referee" jdbcType="BIGINT" />
+    <result column="identifier" property="identifier" jdbcType="VARCHAR" />
+    <result column="token" property="token" jdbcType="VARCHAR" />
+    <result column="im_token" property="imToken" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.microsilver.mrcard.basicservice.model.FxSdUserMember" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, mobile, realname, nickname, openid, pwd, salt, servicescor, levelscore, createtime, 
+    avatar, status, openid_qq, openid_wx, finance_id, referee, identifier, token, im_token
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMemberExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fx_sd_user_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMemberExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_sd_user_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fx_sd_user_member
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fx_sd_user_member
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMemberExample" >
+    delete from fx_sd_user_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMember" >
+    insert into fx_sd_user_member (id, mobile, realname, 
+      nickname, openid, pwd, 
+      salt, servicescor, levelscore, 
+      createtime, avatar, status, 
+      openid_qq, openid_wx, finance_id, 
+      referee, identifier, token, 
+      im_token, content)
+    values (#{id,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{servicescor,jdbcType=INTEGER}, #{levelscore,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=INTEGER}, #{avatar,jdbcType=VARCHAR}, #{status,jdbcType=BIT}, 
+      #{openidQq,jdbcType=VARCHAR}, #{openidWx,jdbcType=VARCHAR}, #{financeId,jdbcType=BIGINT}, 
+      #{referee,jdbcType=BIGINT}, #{identifier,jdbcType=VARCHAR}, #{token,jdbcType=VARCHAR}, 
+      #{imToken,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMember" >
+    insert into fx_sd_user_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="salt != null" >
+        salt,
+      </if>
+      <if test="servicescor != null" >
+        servicescor,
+      </if>
+      <if test="levelscore != null" >
+        levelscore,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="avatar != null" >
+        avatar,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="openidQq != null" >
+        openid_qq,
+      </if>
+      <if test="openidWx != null" >
+        openid_wx,
+      </if>
+      <if test="financeId != null" >
+        finance_id,
+      </if>
+      <if test="referee != null" >
+        referee,
+      </if>
+      <if test="identifier != null" >
+        identifier,
+      </if>
+      <if test="token != null" >
+        token,
+      </if>
+      <if test="imToken != null" >
+        im_token,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="servicescor != null" >
+        #{servicescor,jdbcType=INTEGER},
+      </if>
+      <if test="levelscore != null" >
+        #{levelscore,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=INTEGER},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="openidQq != null" >
+        #{openidQq,jdbcType=VARCHAR},
+      </if>
+      <if test="openidWx != null" >
+        #{openidWx,jdbcType=VARCHAR},
+      </if>
+      <if test="financeId != null" >
+        #{financeId,jdbcType=BIGINT},
+      </if>
+      <if test="referee != null" >
+        #{referee,jdbcType=BIGINT},
+      </if>
+      <if test="identifier != null" >
+        #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null" >
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="imToken != null" >
+        #{imToken,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMemberExample" resultType="java.lang.Integer" >
+    select count(*) from fx_sd_user_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_sd_user_member
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realname != null" >
+        realname = #{record.realname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickname != null" >
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openid != null" >
+        openid = #{record.openid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwd != null" >
+        pwd = #{record.pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salt != null" >
+        salt = #{record.salt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servicescor != null" >
+        servicescor = #{record.servicescor,jdbcType=INTEGER},
+      </if>
+      <if test="record.levelscore != null" >
+        levelscore = #{record.levelscore,jdbcType=INTEGER},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=INTEGER},
+      </if>
+      <if test="record.avatar != null" >
+        avatar = #{record.avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.openidQq != null" >
+        openid_qq = #{record.openidQq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openidWx != null" >
+        openid_wx = #{record.openidWx,jdbcType=VARCHAR},
+      </if>
+      <if test="record.financeId != null" >
+        finance_id = #{record.financeId,jdbcType=BIGINT},
+      </if>
+      <if test="record.referee != null" >
+        referee = #{record.referee,jdbcType=BIGINT},
+      </if>
+      <if test="record.identifier != null" >
+        identifier = #{record.identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.token != null" >
+        token = #{record.token,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imToken != null" >
+        im_token = #{record.imToken,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update fx_sd_user_member
+    set id = #{record.id,jdbcType=BIGINT},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      openid = #{record.openid,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=VARCHAR},
+      salt = #{record.salt,jdbcType=VARCHAR},
+      servicescor = #{record.servicescor,jdbcType=INTEGER},
+      levelscore = #{record.levelscore,jdbcType=INTEGER},
+      createtime = #{record.createtime,jdbcType=INTEGER},
+      avatar = #{record.avatar,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=BIT},
+      openid_qq = #{record.openidQq,jdbcType=VARCHAR},
+      openid_wx = #{record.openidWx,jdbcType=VARCHAR},
+      finance_id = #{record.financeId,jdbcType=BIGINT},
+      referee = #{record.referee,jdbcType=BIGINT},
+      identifier = #{record.identifier,jdbcType=VARCHAR},
+      token = #{record.token,jdbcType=VARCHAR},
+      im_token = #{record.imToken,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_sd_user_member
+    set id = #{record.id,jdbcType=BIGINT},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      openid = #{record.openid,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=VARCHAR},
+      salt = #{record.salt,jdbcType=VARCHAR},
+      servicescor = #{record.servicescor,jdbcType=INTEGER},
+      levelscore = #{record.levelscore,jdbcType=INTEGER},
+      createtime = #{record.createtime,jdbcType=INTEGER},
+      avatar = #{record.avatar,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=BIT},
+      openid_qq = #{record.openidQq,jdbcType=VARCHAR},
+      openid_wx = #{record.openidWx,jdbcType=VARCHAR},
+      finance_id = #{record.financeId,jdbcType=BIGINT},
+      referee = #{record.referee,jdbcType=BIGINT},
+      identifier = #{record.identifier,jdbcType=VARCHAR},
+      token = #{record.token,jdbcType=VARCHAR},
+      im_token = #{record.imToken,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMember" >
+    update fx_sd_user_member
+    <set >
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="servicescor != null" >
+        servicescor = #{servicescor,jdbcType=INTEGER},
+      </if>
+      <if test="levelscore != null" >
+        levelscore = #{levelscore,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=INTEGER},
+      </if>
+      <if test="avatar != null" >
+        avatar = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="openidQq != null" >
+        openid_qq = #{openidQq,jdbcType=VARCHAR},
+      </if>
+      <if test="openidWx != null" >
+        openid_wx = #{openidWx,jdbcType=VARCHAR},
+      </if>
+      <if test="financeId != null" >
+        finance_id = #{financeId,jdbcType=BIGINT},
+      </if>
+      <if test="referee != null" >
+        referee = #{referee,jdbcType=BIGINT},
+      </if>
+      <if test="identifier != null" >
+        identifier = #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null" >
+        token = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="imToken != null" >
+        im_token = #{imToken,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMember" >
+    update fx_sd_user_member
+    set mobile = #{mobile,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      servicescor = #{servicescor,jdbcType=INTEGER},
+      levelscore = #{levelscore,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=INTEGER},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      status = #{status,jdbcType=BIT},
+      openid_qq = #{openidQq,jdbcType=VARCHAR},
+      openid_wx = #{openidWx,jdbcType=VARCHAR},
+      finance_id = #{financeId,jdbcType=BIGINT},
+      referee = #{referee,jdbcType=BIGINT},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      token = #{token,jdbcType=VARCHAR},
+      im_token = #{imToken,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserMember" >
+    update fx_sd_user_member
+    set mobile = #{mobile,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      servicescor = #{servicescor,jdbcType=INTEGER},
+      levelscore = #{levelscore,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=INTEGER},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      status = #{status,jdbcType=BIT},
+      openid_qq = #{openidQq,jdbcType=VARCHAR},
+      openid_wx = #{openidWx,jdbcType=VARCHAR},
+      finance_id = #{financeId,jdbcType=BIGINT},
+      referee = #{referee,jdbcType=BIGINT},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      token = #{token,jdbcType=VARCHAR},
+      im_token = #{imToken,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

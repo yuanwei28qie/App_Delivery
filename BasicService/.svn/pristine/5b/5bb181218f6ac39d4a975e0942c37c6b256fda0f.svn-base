@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxModelMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxModel" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="title" property="title" jdbcType="CHAR" />
+    <result column="extend" property="extend" jdbcType="INTEGER" />
+    <result column="relation" property="relation" jdbcType="VARCHAR" />
+    <result column="need_pk" property="needPk" jdbcType="BIT" />
+    <result column="field_group" property="fieldGroup" jdbcType="VARCHAR" />
+    <result column="template_list" property="templateList" jdbcType="VARCHAR" />
+    <result column="template_add" property="templateAdd" jdbcType="VARCHAR" />
+    <result column="template_edit" property="templateEdit" jdbcType="VARCHAR" />
+    <result column="list_row" property="listRow" jdbcType="SMALLINT" />
+    <result column="search_key" property="searchKey" jdbcType="VARCHAR" />
+    <result column="search_list" property="searchList" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="engine_type" property="engineType" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.microsilver.mrcard.basicservice.model.FxModelWithBLOBs" extends="BaseResultMap" >
+    <result column="field_sort" property="fieldSort" jdbcType="LONGVARCHAR" />
+    <result column="attribute_list" property="attributeList" jdbcType="LONGVARCHAR" />
+    <result column="list_grid" property="listGrid" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, title, extend, relation, need_pk, field_group, template_list, template_add, 
+    template_edit, list_row, search_key, search_list, create_time, update_time, status, 
+    engine_type
+  </sql>
+  <sql id="Blob_Column_List" >
+    field_sort, attribute_list, list_grid
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.microsilver.mrcard.basicservice.model.FxModelExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fx_model
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxModelExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_model
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fx_model
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fx_model
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxModelExample" >
+    delete from fx_model
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxModelWithBLOBs" >
+    insert into fx_model (id, name, title, extend, 
+      relation, need_pk, field_group, 
+      template_list, template_add, template_edit, 
+      list_row, search_key, search_list, 
+      create_time, update_time, status, 
+      engine_type, field_sort, attribute_list, 
+      list_grid)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=CHAR}, #{title,jdbcType=CHAR}, #{extend,jdbcType=INTEGER}, 
+      #{relation,jdbcType=VARCHAR}, #{needPk,jdbcType=BIT}, #{fieldGroup,jdbcType=VARCHAR}, 
+      #{templateList,jdbcType=VARCHAR}, #{templateAdd,jdbcType=VARCHAR}, #{templateEdit,jdbcType=VARCHAR}, 
+      #{listRow,jdbcType=SMALLINT}, #{searchKey,jdbcType=VARCHAR}, #{searchList,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, 
+      #{engineType,jdbcType=VARCHAR}, #{fieldSort,jdbcType=LONGVARCHAR}, #{attributeList,jdbcType=LONGVARCHAR}, 
+      #{listGrid,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxModelWithBLOBs" >
+    insert into fx_model
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="extend != null" >
+        extend,
+      </if>
+      <if test="relation != null" >
+        relation,
+      </if>
+      <if test="needPk != null" >
+        need_pk,
+      </if>
+      <if test="fieldGroup != null" >
+        field_group,
+      </if>
+      <if test="templateList != null" >
+        template_list,
+      </if>
+      <if test="templateAdd != null" >
+        template_add,
+      </if>
+      <if test="templateEdit != null" >
+        template_edit,
+      </if>
+      <if test="listRow != null" >
+        list_row,
+      </if>
+      <if test="searchKey != null" >
+        search_key,
+      </if>
+      <if test="searchList != null" >
+        search_list,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="engineType != null" >
+        engine_type,
+      </if>
+      <if test="fieldSort != null" >
+        field_sort,
+      </if>
+      <if test="attributeList != null" >
+        attribute_list,
+      </if>
+      <if test="listGrid != null" >
+        list_grid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=CHAR},
+      </if>
+      <if test="extend != null" >
+        #{extend,jdbcType=INTEGER},
+      </if>
+      <if test="relation != null" >
+        #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="needPk != null" >
+        #{needPk,jdbcType=BIT},
+      </if>
+      <if test="fieldGroup != null" >
+        #{fieldGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="templateList != null" >
+        #{templateList,jdbcType=VARCHAR},
+      </if>
+      <if test="templateAdd != null" >
+        #{templateAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="templateEdit != null" >
+        #{templateEdit,jdbcType=VARCHAR},
+      </if>
+      <if test="listRow != null" >
+        #{listRow,jdbcType=SMALLINT},
+      </if>
+      <if test="searchKey != null" >
+        #{searchKey,jdbcType=VARCHAR},
+      </if>
+      <if test="searchList != null" >
+        #{searchList,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="engineType != null" >
+        #{engineType,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldSort != null" >
+        #{fieldSort,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="attributeList != null" >
+        #{attributeList,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="listGrid != null" >
+        #{listGrid,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxModelExample" resultType="java.lang.Integer" >
+    select count(*) from fx_model
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_model
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=CHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=CHAR},
+      </if>
+      <if test="record.extend != null" >
+        extend = #{record.extend,jdbcType=INTEGER},
+      </if>
+      <if test="record.relation != null" >
+        relation = #{record.relation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.needPk != null" >
+        need_pk = #{record.needPk,jdbcType=BIT},
+      </if>
+      <if test="record.fieldGroup != null" >
+        field_group = #{record.fieldGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="record.templateList != null" >
+        template_list = #{record.templateList,jdbcType=VARCHAR},
+      </if>
+      <if test="record.templateAdd != null" >
+        template_add = #{record.templateAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.templateEdit != null" >
+        template_edit = #{record.templateEdit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.listRow != null" >
+        list_row = #{record.listRow,jdbcType=SMALLINT},
+      </if>
+      <if test="record.searchKey != null" >
+        search_key = #{record.searchKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.searchList != null" >
+        search_list = #{record.searchList,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.engineType != null" >
+        engine_type = #{record.engineType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fieldSort != null" >
+        field_sort = #{record.fieldSort,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.attributeList != null" >
+        attribute_list = #{record.attributeList,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.listGrid != null" >
+        list_grid = #{record.listGrid,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update fx_model
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=CHAR},
+      title = #{record.title,jdbcType=CHAR},
+      extend = #{record.extend,jdbcType=INTEGER},
+      relation = #{record.relation,jdbcType=VARCHAR},
+      need_pk = #{record.needPk,jdbcType=BIT},
+      field_group = #{record.fieldGroup,jdbcType=VARCHAR},
+      template_list = #{record.templateList,jdbcType=VARCHAR},
+      template_add = #{record.templateAdd,jdbcType=VARCHAR},
+      template_edit = #{record.templateEdit,jdbcType=VARCHAR},
+      list_row = #{record.listRow,jdbcType=SMALLINT},
+      search_key = #{record.searchKey,jdbcType=VARCHAR},
+      search_list = #{record.searchList,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT},
+      engine_type = #{record.engineType,jdbcType=VARCHAR},
+      field_sort = #{record.fieldSort,jdbcType=LONGVARCHAR},
+      attribute_list = #{record.attributeList,jdbcType=LONGVARCHAR},
+      list_grid = #{record.listGrid,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_model
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=CHAR},
+      title = #{record.title,jdbcType=CHAR},
+      extend = #{record.extend,jdbcType=INTEGER},
+      relation = #{record.relation,jdbcType=VARCHAR},
+      need_pk = #{record.needPk,jdbcType=BIT},
+      field_group = #{record.fieldGroup,jdbcType=VARCHAR},
+      template_list = #{record.templateList,jdbcType=VARCHAR},
+      template_add = #{record.templateAdd,jdbcType=VARCHAR},
+      template_edit = #{record.templateEdit,jdbcType=VARCHAR},
+      list_row = #{record.listRow,jdbcType=SMALLINT},
+      search_key = #{record.searchKey,jdbcType=VARCHAR},
+      search_list = #{record.searchList,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT},
+      engine_type = #{record.engineType,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxModelWithBLOBs" >
+    update fx_model
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=CHAR},
+      </if>
+      <if test="extend != null" >
+        extend = #{extend,jdbcType=INTEGER},
+      </if>
+      <if test="relation != null" >
+        relation = #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="needPk != null" >
+        need_pk = #{needPk,jdbcType=BIT},
+      </if>
+      <if test="fieldGroup != null" >
+        field_group = #{fieldGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="templateList != null" >
+        template_list = #{templateList,jdbcType=VARCHAR},
+      </if>
+      <if test="templateAdd != null" >
+        template_add = #{templateAdd,jdbcType=VARCHAR},
+      </if>
+      <if test="templateEdit != null" >
+        template_edit = #{templateEdit,jdbcType=VARCHAR},
+      </if>
+      <if test="listRow != null" >
+        list_row = #{listRow,jdbcType=SMALLINT},
+      </if>
+      <if test="searchKey != null" >
+        search_key = #{searchKey,jdbcType=VARCHAR},
+      </if>
+      <if test="searchList != null" >
+        search_list = #{searchList,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="engineType != null" >
+        engine_type = #{engineType,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldSort != null" >
+        field_sort = #{fieldSort,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="attributeList != null" >
+        attribute_list = #{attributeList,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="listGrid != null" >
+        list_grid = #{listGrid,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.microsilver.mrcard.basicservice.model.FxModelWithBLOBs" >
+    update fx_model
+    set name = #{name,jdbcType=CHAR},
+      title = #{title,jdbcType=CHAR},
+      extend = #{extend,jdbcType=INTEGER},
+      relation = #{relation,jdbcType=VARCHAR},
+      need_pk = #{needPk,jdbcType=BIT},
+      field_group = #{fieldGroup,jdbcType=VARCHAR},
+      template_list = #{templateList,jdbcType=VARCHAR},
+      template_add = #{templateAdd,jdbcType=VARCHAR},
+      template_edit = #{templateEdit,jdbcType=VARCHAR},
+      list_row = #{listRow,jdbcType=SMALLINT},
+      search_key = #{searchKey,jdbcType=VARCHAR},
+      search_list = #{searchList,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      engine_type = #{engineType,jdbcType=VARCHAR},
+      field_sort = #{fieldSort,jdbcType=LONGVARCHAR},
+      attribute_list = #{attributeList,jdbcType=LONGVARCHAR},
+      list_grid = #{listGrid,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxModel" >
+    update fx_model
+    set name = #{name,jdbcType=CHAR},
+      title = #{title,jdbcType=CHAR},
+      extend = #{extend,jdbcType=INTEGER},
+      relation = #{relation,jdbcType=VARCHAR},
+      need_pk = #{needPk,jdbcType=BIT},
+      field_group = #{fieldGroup,jdbcType=VARCHAR},
+      template_list = #{templateList,jdbcType=VARCHAR},
+      template_add = #{templateAdd,jdbcType=VARCHAR},
+      template_edit = #{templateEdit,jdbcType=VARCHAR},
+      list_row = #{listRow,jdbcType=SMALLINT},
+      search_key = #{searchKey,jdbcType=VARCHAR},
+      search_list = #{searchList,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      engine_type = #{engineType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

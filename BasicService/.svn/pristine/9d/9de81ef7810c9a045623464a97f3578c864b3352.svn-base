@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxSdUserAgentinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="enterprisename" property="enterprisename" jdbcType="VARCHAR" />
+    <result column="alipay_account" property="alipayAccount" jdbcType="VARCHAR" />
+    <result column="identity_card_no" property="identityCardNo" jdbcType="VARCHAR" />
+    <result column="identity_card_front" property="identityCardFront" jdbcType="VARCHAR" />
+    <result column="identity_card_back" property="identityCardBack" jdbcType="VARCHAR" />
+    <result column="identity_card_group" property="identityCardGroup" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="check_status" property="checkStatus" jdbcType="BIT" />
+    <result column="areas_text" property="areasText" jdbcType="VARCHAR" />
+    <result column="areas" property="areas" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="finance_id" property="financeId" jdbcType="BIGINT" />
+    <result column="begin_time" property="beginTime" jdbcType="INTEGER" />
+    <result column="end_time" property="endTime" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, mobile, realname, enterprisename, alipay_account, identity_card_no, identity_card_front, 
+    identity_card_back, identity_card_group, create_time, check_status, areas_text, areas, 
+    remark, finance_id, begin_time, end_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_sd_user_agentinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_sd_user_agentinfo
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fx_sd_user_agentinfo
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfoExample" >
+    delete from fx_sd_user_agentinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    insert into fx_sd_user_agentinfo (id, mobile, realname, 
+      enterprisename, alipay_account, identity_card_no, 
+      identity_card_front, identity_card_back, identity_card_group, 
+      create_time, check_status, areas_text, 
+      areas, remark, finance_id, 
+      begin_time, end_time)
+    values (#{id,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{enterprisename,jdbcType=VARCHAR}, #{alipayAccount,jdbcType=VARCHAR}, #{identityCardNo,jdbcType=VARCHAR}, 
+      #{identityCardFront,jdbcType=VARCHAR}, #{identityCardBack,jdbcType=VARCHAR}, #{identityCardGroup,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=INTEGER}, #{checkStatus,jdbcType=BIT}, #{areasText,jdbcType=VARCHAR}, 
+      #{areas,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{financeId,jdbcType=BIGINT}, 
+      #{beginTime,jdbcType=INTEGER}, #{endTime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    insert into fx_sd_user_agentinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename,
+      </if>
+      <if test="alipayAccount != null" >
+        alipay_account,
+      </if>
+      <if test="identityCardNo != null" >
+        identity_card_no,
+      </if>
+      <if test="identityCardFront != null" >
+        identity_card_front,
+      </if>
+      <if test="identityCardBack != null" >
+        identity_card_back,
+      </if>
+      <if test="identityCardGroup != null" >
+        identity_card_group,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="checkStatus != null" >
+        check_status,
+      </if>
+      <if test="areasText != null" >
+        areas_text,
+      </if>
+      <if test="areas != null" >
+        areas,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="financeId != null" >
+        finance_id,
+      </if>
+      <if test="beginTime != null" >
+        begin_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayAccount != null" >
+        #{alipayAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null" >
+        #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardFront != null" >
+        #{identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardBack != null" >
+        #{identityCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardGroup != null" >
+        #{identityCardGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="checkStatus != null" >
+        #{checkStatus,jdbcType=BIT},
+      </if>
+      <if test="areasText != null" >
+        #{areasText,jdbcType=VARCHAR},
+      </if>
+      <if test="areas != null" >
+        #{areas,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="financeId != null" >
+        #{financeId,jdbcType=BIGINT},
+      </if>
+      <if test="beginTime != null" >
+        #{beginTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfoExample" resultType="java.lang.Integer" >
+    select count(*) from fx_sd_user_agentinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_sd_user_agentinfo
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realname != null" >
+        realname = #{record.realname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enterprisename != null" >
+        enterprisename = #{record.enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.alipayAccount != null" >
+        alipay_account = #{record.alipayAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardNo != null" >
+        identity_card_no = #{record.identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardFront != null" >
+        identity_card_front = #{record.identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardBack != null" >
+        identity_card_back = #{record.identityCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardGroup != null" >
+        identity_card_group = #{record.identityCardGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.checkStatus != null" >
+        check_status = #{record.checkStatus,jdbcType=BIT},
+      </if>
+      <if test="record.areasText != null" >
+        areas_text = #{record.areasText,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areas != null" >
+        areas = #{record.areas,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.financeId != null" >
+        finance_id = #{record.financeId,jdbcType=BIGINT},
+      </if>
+      <if test="record.beginTime != null" >
+        begin_time = #{record.beginTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.endTime != null" >
+        end_time = #{record.endTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_sd_user_agentinfo
+    set id = #{record.id,jdbcType=BIGINT},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
+      enterprisename = #{record.enterprisename,jdbcType=VARCHAR},
+      alipay_account = #{record.alipayAccount,jdbcType=VARCHAR},
+      identity_card_no = #{record.identityCardNo,jdbcType=VARCHAR},
+      identity_card_front = #{record.identityCardFront,jdbcType=VARCHAR},
+      identity_card_back = #{record.identityCardBack,jdbcType=VARCHAR},
+      identity_card_group = #{record.identityCardGroup,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      check_status = #{record.checkStatus,jdbcType=BIT},
+      areas_text = #{record.areasText,jdbcType=VARCHAR},
+      areas = #{record.areas,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      finance_id = #{record.financeId,jdbcType=BIGINT},
+      begin_time = #{record.beginTime,jdbcType=INTEGER},
+      end_time = #{record.endTime,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    update fx_sd_user_agentinfo
+    <set >
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="alipayAccount != null" >
+        alipay_account = #{alipayAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null" >
+        identity_card_no = #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardFront != null" >
+        identity_card_front = #{identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardBack != null" >
+        identity_card_back = #{identityCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardGroup != null" >
+        identity_card_group = #{identityCardGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=BIT},
+      </if>
+      <if test="areasText != null" >
+        areas_text = #{areasText,jdbcType=VARCHAR},
+      </if>
+      <if test="areas != null" >
+        areas = #{areas,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="financeId != null" >
+        finance_id = #{financeId,jdbcType=BIGINT},
+      </if>
+      <if test="beginTime != null" >
+        begin_time = #{beginTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    update fx_sd_user_agentinfo
+    set mobile = #{mobile,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      alipay_account = #{alipayAccount,jdbcType=VARCHAR},
+      identity_card_no = #{identityCardNo,jdbcType=VARCHAR},
+      identity_card_front = #{identityCardFront,jdbcType=VARCHAR},
+      identity_card_back = #{identityCardBack,jdbcType=VARCHAR},
+      identity_card_group = #{identityCardGroup,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      check_status = #{checkStatus,jdbcType=BIT},
+      areas_text = #{areasText,jdbcType=VARCHAR},
+      areas = #{areas,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      finance_id = #{financeId,jdbcType=BIGINT},
+      begin_time = #{beginTime,jdbcType=INTEGER},
+      end_time = #{endTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

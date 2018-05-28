@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxSdSysCarriageDispatchMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatch" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="area_code" property="areaCode" jdbcType="INTEGER" />
+    <result column="base_price" property="basePrice" jdbcType="DECIMAL" />
+    <result column="base_mileage" property="baseMileage" jdbcType="TINYINT" />
+    <result column="begin_time" property="beginTime" jdbcType="INTEGER" />
+    <result column="end_time" property="endTime" jdbcType="INTEGER" />
+    <result column="night_markup" property="nightMarkup" jdbcType="DECIMAL" />
+    <result column="mileage_markup" property="mileageMarkup" jdbcType="DECIMAL" />
+    <result column="special_markup" property="specialMarkup" jdbcType="DECIMAL" />
+    <result column="weight_markup" property="weightMarkup" jdbcType="DECIMAL" />
+    <result column="initial_weight" property="initialWeight" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, area_code, base_price, base_mileage, begin_time, end_time, night_markup, mileage_markup, 
+    special_markup, weight_markup, initial_weight
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatchExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_sd_sys_carriage_dispatch
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_sd_sys_carriage_dispatch
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fx_sd_sys_carriage_dispatch
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatchExample" >
+    delete from fx_sd_sys_carriage_dispatch
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatch" >
+    insert into fx_sd_sys_carriage_dispatch (id, area_code, base_price, 
+      base_mileage, begin_time, end_time, 
+      night_markup, mileage_markup, special_markup, 
+      weight_markup, initial_weight)
+    values (#{id,jdbcType=BIGINT}, #{areaCode,jdbcType=INTEGER}, #{basePrice,jdbcType=DECIMAL}, 
+      #{baseMileage,jdbcType=TINYINT}, #{beginTime,jdbcType=INTEGER}, #{endTime,jdbcType=INTEGER}, 
+      #{nightMarkup,jdbcType=DECIMAL}, #{mileageMarkup,jdbcType=DECIMAL}, #{specialMarkup,jdbcType=DECIMAL}, 
+      #{weightMarkup,jdbcType=DECIMAL}, #{initialWeight,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatch" >
+    insert into fx_sd_sys_carriage_dispatch
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="basePrice != null" >
+        base_price,
+      </if>
+      <if test="baseMileage != null" >
+        base_mileage,
+      </if>
+      <if test="beginTime != null" >
+        begin_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="nightMarkup != null" >
+        night_markup,
+      </if>
+      <if test="mileageMarkup != null" >
+        mileage_markup,
+      </if>
+      <if test="specialMarkup != null" >
+        special_markup,
+      </if>
+      <if test="weightMarkup != null" >
+        weight_markup,
+      </if>
+      <if test="initialWeight != null" >
+        initial_weight,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="basePrice != null" >
+        #{basePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="baseMileage != null" >
+        #{baseMileage,jdbcType=TINYINT},
+      </if>
+      <if test="beginTime != null" >
+        #{beginTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=INTEGER},
+      </if>
+      <if test="nightMarkup != null" >
+        #{nightMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="mileageMarkup != null" >
+        #{mileageMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="specialMarkup != null" >
+        #{specialMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="weightMarkup != null" >
+        #{weightMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="initialWeight != null" >
+        #{initialWeight,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatchExample" resultType="java.lang.Integer" >
+    select count(*) from fx_sd_sys_carriage_dispatch
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_sd_sys_carriage_dispatch
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.areaCode != null" >
+        area_code = #{record.areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.basePrice != null" >
+        base_price = #{record.basePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.baseMileage != null" >
+        base_mileage = #{record.baseMileage,jdbcType=TINYINT},
+      </if>
+      <if test="record.beginTime != null" >
+        begin_time = #{record.beginTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.endTime != null" >
+        end_time = #{record.endTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.nightMarkup != null" >
+        night_markup = #{record.nightMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mileageMarkup != null" >
+        mileage_markup = #{record.mileageMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="record.specialMarkup != null" >
+        special_markup = #{record.specialMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="record.weightMarkup != null" >
+        weight_markup = #{record.weightMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="record.initialWeight != null" >
+        initial_weight = #{record.initialWeight,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_sd_sys_carriage_dispatch
+    set id = #{record.id,jdbcType=BIGINT},
+      area_code = #{record.areaCode,jdbcType=INTEGER},
+      base_price = #{record.basePrice,jdbcType=DECIMAL},
+      base_mileage = #{record.baseMileage,jdbcType=TINYINT},
+      begin_time = #{record.beginTime,jdbcType=INTEGER},
+      end_time = #{record.endTime,jdbcType=INTEGER},
+      night_markup = #{record.nightMarkup,jdbcType=DECIMAL},
+      mileage_markup = #{record.mileageMarkup,jdbcType=DECIMAL},
+      special_markup = #{record.specialMarkup,jdbcType=DECIMAL},
+      weight_markup = #{record.weightMarkup,jdbcType=DECIMAL},
+      initial_weight = #{record.initialWeight,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatch" >
+    update fx_sd_sys_carriage_dispatch
+    <set >
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="basePrice != null" >
+        base_price = #{basePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="baseMileage != null" >
+        base_mileage = #{baseMileage,jdbcType=TINYINT},
+      </if>
+      <if test="beginTime != null" >
+        begin_time = #{beginTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=INTEGER},
+      </if>
+      <if test="nightMarkup != null" >
+        night_markup = #{nightMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="mileageMarkup != null" >
+        mileage_markup = #{mileageMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="specialMarkup != null" >
+        special_markup = #{specialMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="weightMarkup != null" >
+        weight_markup = #{weightMarkup,jdbcType=DECIMAL},
+      </if>
+      <if test="initialWeight != null" >
+        initial_weight = #{initialWeight,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxSdSysCarriageDispatch" >
+    update fx_sd_sys_carriage_dispatch
+    set area_code = #{areaCode,jdbcType=INTEGER},
+      base_price = #{basePrice,jdbcType=DECIMAL},
+      base_mileage = #{baseMileage,jdbcType=TINYINT},
+      begin_time = #{beginTime,jdbcType=INTEGER},
+      end_time = #{endTime,jdbcType=INTEGER},
+      night_markup = #{nightMarkup,jdbcType=DECIMAL},
+      mileage_markup = #{mileageMarkup,jdbcType=DECIMAL},
+      special_markup = #{specialMarkup,jdbcType=DECIMAL},
+      weight_markup = #{weightMarkup,jdbcType=DECIMAL},
+      initial_weight = #{initialWeight,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

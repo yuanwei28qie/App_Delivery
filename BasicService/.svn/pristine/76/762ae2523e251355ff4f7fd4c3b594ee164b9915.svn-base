@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package com.microsilver.mrcard.basicservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.microsilver.mrcard.basicservice.dao.FxSdFinanceCustomerMapper;
+import com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer;
+import com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomerExample;
+
+/**
+ * 
+ * @Name com.microsilver.mrcard.basicservice.service.FinanceService
+ * @Description
+ * 
+ * @Author huwei
+ * @Version 2018年4月11日 下午3:11:31
+ * @Copyright Micro Silver-SuperDelivery
+ *
+ */
+@Service
+public class FinanceService {
+	@Autowired
+	private FxSdFinanceCustomerMapper fxSdFinanceCustomerMapper;
+
+	public void insertFinaceCustoemer(FxSdFinanceCustomer customer) {
+		fxSdFinanceCustomerMapper.returnId(customer);
+	}
+
+	public FxSdFinanceCustomer selectAccountByUserIdAndUserType(FxSdFinanceCustomer customer) {
+		FxSdFinanceCustomerExample example = new FxSdFinanceCustomerExample();
+		example.createCriteria().andUseridEqualTo(customer.getUserid()).andUsertypeEqualTo(customer.getUsertype());
+		List<FxSdFinanceCustomer> list = fxSdFinanceCustomerMapper.selectByExample(example);
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		return null;
+	}
+}

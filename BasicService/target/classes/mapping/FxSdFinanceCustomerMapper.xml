@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxSdFinanceCustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="TINYINT" />
+    <result column="total_amount" property="totalAmount" jdbcType="DECIMAL" />
+    <result column="real_amount" property="realAmount" jdbcType="DECIMAL" />
+    <result column="other_amount" property="otherAmount" jdbcType="DECIMAL" />
+    <result column="advance_amount" property="advanceAmount" jdbcType="DECIMAL" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, mobile, user_type, total_amount, real_amount, other_amount, advance_amount, create_time, 
+    status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_sd_finance_customer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_sd_finance_customer
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fx_sd_finance_customer
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomerExample" >
+    delete from fx_sd_finance_customer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer" >
+    insert into fx_sd_finance_customer (id, mobile, user_type, 
+      total_amount, real_amount, other_amount, 
+      advance_amount, create_time, status
+      )
+    values (#{id,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{userType,jdbcType=TINYINT}, 
+      #{totalAmount,jdbcType=DECIMAL}, #{realAmount,jdbcType=DECIMAL}, #{otherAmount,jdbcType=DECIMAL}, 
+      #{advanceAmount,jdbcType=DECIMAL}, #{createTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+
+  <insert id="insertIntoAndReturnId" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
+    insert into fx_sd_finance_customer (id, mobile, user_type,
+      total_amount, real_amount, other_amount,
+      advance_amount, create_time, status
+      )
+    values (#{id,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{userType,jdbcType=TINYINT},
+      #{totalAmount,jdbcType=DECIMAL}, #{realAmount,jdbcType=DECIMAL}, #{otherAmount,jdbcType=DECIMAL},
+      #{advanceAmount,jdbcType=DECIMAL}, #{createTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer" >
+    insert into fx_sd_finance_customer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="totalAmount != null" >
+        total_amount,
+      </if>
+      <if test="realAmount != null" >
+        real_amount,
+      </if>
+      <if test="otherAmount != null" >
+        other_amount,
+      </if>
+      <if test="advanceAmount != null" >
+        advance_amount,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=TINYINT},
+      </if>
+      <if test="totalAmount != null" >
+        #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="realAmount != null" >
+        #{realAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="otherAmount != null" >
+        #{otherAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="advanceAmount != null" >
+        #{advanceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomerExample" resultType="java.lang.Integer" >
+    select count(*) from fx_sd_finance_customer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_sd_finance_customer
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=TINYINT},
+      </if>
+      <if test="record.totalAmount != null" >
+        total_amount = #{record.totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.realAmount != null" >
+        real_amount = #{record.realAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.otherAmount != null" >
+        other_amount = #{record.otherAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.advanceAmount != null" >
+        advance_amount = #{record.advanceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_sd_finance_customer
+    set id = #{record.id,jdbcType=BIGINT},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      user_type = #{record.userType,jdbcType=TINYINT},
+      total_amount = #{record.totalAmount,jdbcType=DECIMAL},
+      real_amount = #{record.realAmount,jdbcType=DECIMAL},
+      other_amount = #{record.otherAmount,jdbcType=DECIMAL},
+      advance_amount = #{record.advanceAmount,jdbcType=DECIMAL},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer" >
+    update fx_sd_finance_customer
+    <set >
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=TINYINT},
+      </if>
+      <if test="totalAmount != null" >
+        total_amount = #{totalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="realAmount != null" >
+        real_amount = #{realAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="otherAmount != null" >
+        other_amount = #{otherAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="advanceAmount != null" >
+        advance_amount = #{advanceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxSdFinanceCustomer" >
+    update fx_sd_finance_customer
+    set mobile = #{mobile,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=TINYINT},
+      total_amount = #{totalAmount,jdbcType=DECIMAL},
+      real_amount = #{realAmount,jdbcType=DECIMAL},
+      other_amount = #{otherAmount,jdbcType=DECIMAL},
+      advance_amount = #{advanceAmount,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

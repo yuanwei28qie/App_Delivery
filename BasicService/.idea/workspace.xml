@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="superDelivery" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="b445fbbe-e9ff-4a86-9a1e-cc199b14d537" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SuperDeliveryController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="79">
+              <caret line="474" column="6" selection-start-line="474" selection-start-column="6" selection-end-line="474" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#perfectSuperDelivery#0;class#SuperDeliveryController#0" />
+                <element signature="method#superDeliveryLogin#0;class#SuperDeliveryController#0" />
+                <element signature="method#editSuperDeliveryPhone#0;class#SuperDeliveryController#0" />
+                <element signature="method#updateSuperDeliveryPwd#0;class#SuperDeliveryController#0" />
+                <element signature="method#uploadSuperDeliveryHeadImg#0;class#SuperDeliveryController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="548">
+              <caret line="908" column="46" selection-start-line="908" selection-start-column="27" selection-end-line="908" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#userRegister#0;class#UserController#0" />
+                <element signature="method#updatePwd#0;class#UserController#0" />
+                <element signature="method#userQuickLogin#0;class#UserController#0" />
+                <element signature="method#userLogin#0;class#UserController#0" />
+                <element signature="method#getUserInfo#0;class#UserController#0" />
+                <element signature="method#updateUserPhone#0;class#UserController#0" />
+                <element signature="method#addUserAddress#0;class#UserController#0" />
+                <element signature="method#updateUserAddress#0;class#UserController#0" />
+                <element signature="method#deleteUserAddress#0;class#UserController#0" />
+                <element signature="method#setUpDefaultAddress#0;class#UserController#0" />
+                <element signature="method#searchUserAddressList#0;class#UserController#0" />
+                <element signature="method#uploadUserHeadImg#0;class#UserController#0" />
+                <element signature="method#updateUserNickname#0;class#UserController#0" />
+                <element signature="method#getDeliversPosition#0;class#UserController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/CommonController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PayController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="200" column="66" selection-start-line="200" selection-start-column="66" selection-end-line="200" selection-end-column="66" />
+              <folding>
+                <element signature="method#beforePayWx#0;class#PayController#0" />
+                <element signature="method#CheckPayWxIsSuccess#0;class#PayController#0" />
+                <element signature="method#aliPayReady#0;class#PayController#0" />
+                <element signature="method#notify#0;class#PayController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/filter/TokenFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="39" column="77" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserOrderController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4041">
+              <caret line="541" column="149" selection-start-line="541" selection-start-column="149" selection-end-line="541" selection-end-column="149" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#createOrder#0;class#UserOrderController#0" />
+                <element signature="method#getOrderInfo#0;class#UserOrderController#0" />
+                <element signature="method#getReadyPayOrderInfo#0;class#UserOrderController#0" />
+                <element signature="method#getReadyRobOrderInfo#0;class#UserOrderController#0" />
+                <element signature="method#getOnGoingOrderInfo#0;class#UserOrderController#0" />
+                <element signature="method#userEvaluateDelivery#0;class#UserOrderController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="system-config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/system-config.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SuperDeliveryOrderController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryOrderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="701" column="77" selection-start-line="701" selection-start-column="77" selection-end-line="701" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#isWork#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#getDeliveryLatLng#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#getUserReleaseOrder#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#deliveryRobbOrder#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#deliveryGetGoods#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#deliveryConfirmGoods#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#deliveryEvaluateUser#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#deliveryCenter#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#deliveryCenterInfo#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#getDeliveryAllOrders#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#getDeliveryWaitEvaluateOrders#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#getDeliveryFinishOrders#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#getDeliveryOrderInfo#0;class#SuperDeliveryOrderController#0" />
+                <element signature="method#addOrderSn#0;class#SuperDeliveryOrderController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Tag Library Descriptor" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>maven</find>
+      <find>status</find>
+      <find>cre</find>
+      <find />
+      <find>&quot;&quot;</find>
+      <find>page</find>
+      <find>pagehel</find>
+      <find>create</find>
+      <find>createtime</find>
+      <find>createT</find>
+      <find>common</find>
+      <find>path</find>
+      <find>starter</find>
+      <find>fast</find>
+      <find>fastjson</find>
+      <find>pagehelper</find>
+      <find>BaseResultMap</find>
+      <find>selectByExampleAndOrderByCreateTime</find>
+      <find>insert</find>
+      <find>System.out</find>
+      <find>CHARSET</find>
+      <find>notify_url</find>
+      <find>return_url</find>
+      <find>areaCode</find>
+      <find>TotalCount</find>
+      <find>OrderDto</find>
+      <find>8083</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/service/SuperDeliveryInfoService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/MapDistance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/AlipayParameter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/AlipayVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/common/Consts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayMoreController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayController2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/Demo02.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/FinanceController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dao/FxSdSysCarriageDispatchMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dao/FxSdCarriageOrderMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapping/FxSdCarriageOrderMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/DeliveryLatLngVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/DeliveryLatLngVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/JuheMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/enums/EWarning.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/MobileCheckCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/DeliveryAsUserDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/OrderStatusDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/listener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/TestJedis.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/MobileVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/CheckCodeDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/UserDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/UserGetInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/OrderCreateVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/OrderDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/Subscriber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/SpringContextUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/SpringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/KeyExpiredListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/ReceiptDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/DeliveryInfoDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/Demo01.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/TestTask2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/FxSdCarriageOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/AlipayRefundUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/TestTask1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryOrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/config/AlipayConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/TokenType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/CommonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/system-config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/filter/TokenFilter.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BasicService" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BasicService" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="573" />
+    <option name="y" value="410" />
+    <option name="width" value="1400" />
+    <option name="height" value="620" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="basicservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="basicservice" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="basicservice" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BasicService" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BasicService" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="F:/Code/Demo01" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Code\BasicService\.settings" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Dev\Backup\BasicService\src\main\resources\mapping" />
+      <recent name="F:\Dev\Backup\BasicService\src\main\java\com\microsilver\mrcard\basicservice\model" />
+      <recent name="F:\Dev\Backup\BasicService\src\main\java\com\microsilver\mrcard\basicservice\dao" />
+      <recent name="F:\Code\BasicService\src\main\java\com\microsilver\mrcard\basicservice\dao" />
+      <recent name="F:\Code\BasicService\src\main\java\com\microsilver\mrcard\basicservice\model" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.microsilver.mrcard.basicservice.dto" />
+      <recent name="com.microsilver.mrcard.basicservice.dao" />
+      <recent name="com.microsilver.mrcard.basicservice.utils" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.microsilver.mrcard.basicservice.service" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8081/api/pay/notify" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="AlipayRefundUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsilver.mrcard.basicservice.utils.AlipayRefundUtil" />
+      <module name="BasicService" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsilver.mrcard.basicservice.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Demo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsilver.mrcard.basicservice.controller.Demo01" />
+      <module name="BasicService" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsilver.mrcard.basicservice.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="JuheMsg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsilver.mrcard.basicservice.utils.JuheMsg" />
+      <module name="BasicService" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsilver.mrcard.basicservice.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Subscriber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsilver.mrcard.basicservice.core.listener.Subscriber" />
+      <module name="BasicService" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsilver.mrcard.basicservice.core.listener.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="TestJedis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.microsilver.mrcard.basicservice.core.listener.TestJedis" />
+      <module name="BasicService" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.microsilver.mrcard.basicservice.core.listener.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="engineering" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration name="superDelivery" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BasicService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.microsilver.mrcard.basicservice.Application" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.engineering" />
+      <item itemvalue="Maven.superDelivery" />
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Application.JuheMsg" />
+      <item itemvalue="Application.AlipayRefundUtil" />
+      <item itemvalue="Application.Subscriber" />
+      <item itemvalue="Application.TestJedis" />
+      <item itemvalue="Application.Demo01" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AlipayRefundUtil" />
+        <item itemvalue="Application.Demo01" />
+        <item itemvalue="Application.Subscriber" />
+        <item itemvalue="Application.TestJedis" />
+        <item itemvalue="Application.JuheMsg" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration useDefault="false">C:\Users\RedMagic\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b445fbbe-e9ff-4a86-9a1e-cc199b14d537" name="Default" comment="" />
+      <created>1524287966127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524287966127</updated>
+      <workItem from="1524287969259" duration="1293000" />
+      <workItem from="1524289297921" duration="16677000" />
+      <workItem from="1524448877265" duration="29038000" />
+      <workItem from="1524535202986" duration="16494000" />
+      <workItem from="1524621612584" duration="23319000" />
+      <workItem from="1524649777047" duration="7369000" />
+      <workItem from="1524707671622" duration="27386000" />
+      <workItem from="1524795365948" duration="15845000" />
+      <workItem from="1524816402588" duration="1313000" />
+      <workItem from="1524818034661" duration="13073000" />
+      <workItem from="1524880603821" duration="7521000" />
+      <workItem from="1524890428599" duration="30799000" />
+      <workItem from="1524967288392" duration="35553000" />
+      <workItem from="1525053777088" duration="30130000" />
+      <workItem from="1525226038368" duration="6890000" />
+      <workItem from="1525236294109" duration="14452000" />
+      <workItem from="1525252686723" duration="1390000" />
+      <workItem from="1525254103953" duration="2746000" />
+      <workItem from="1525312948837" duration="21273000" />
+      <workItem from="1525399403027" duration="21813000" />
+      <workItem from="1525659480144" duration="25804000" />
+      <workItem from="1525690385648" duration="489000" />
+      <workItem from="1525745984409" duration="29523000" />
+      <workItem from="1525831588342" duration="6473000" />
+      <workItem from="1525862858477" duration="2547000" />
+      <workItem from="1525868782754" duration="5181000" />
+      <workItem from="1525917726412" duration="23409000" />
+      <workItem from="1526005342234" duration="14942000" />
+      <workItem from="1526103465502" duration="7805000" />
+      <workItem from="1526350099411" duration="2930000" />
+      <workItem from="1526353499691" duration="21521000" />
+      <workItem from="1526435981504" duration="75702000" />
+      <workItem from="1526710151380" duration="2340000" />
+      <workItem from="1526869191555" duration="210000" />
+      <workItem from="1526869440348" duration="678000" />
+      <workItem from="1526871057572" duration="4806000" />
+      <workItem from="1526877428377" duration="10210000" />
+      <workItem from="1526954866404" duration="14921000" />
+      <workItem from="1526976178930" duration="7931000" />
+      <workItem from="1527041220531" duration="24031000" />
+      <workItem from="1527126025316" duration="58409000" />
+      <workItem from="1527473279605" duration="9197000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="DateTimeDemo_testFormat - 2018.05.15 at 11h 57m 06s.xml">
+      <configuration name="DateTimeDemo.testFormat" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="673433000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32897604" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.16151386" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+      <window_info id="Structure" order="1" sideWeight="0.50151056" side_tool="true" weight="0.2707889" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32897604" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32897604" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2788671" />
+      <window_info anchor="bottom" id="Spring" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49848944" visible="true" weight="0.20788912" />
+      <window_info anchor="right" id="Bean Validation" order="3" weight="0.32995737" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23202614" />
+      <window_info anchor="bottom" id="Spring" order="11" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32897604" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32897604" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.15511727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26119402" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32995737" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java</url>
+          <line>59</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java</url>
+          <line>496</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java</url>
+          <line>469</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>400</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java</url>
+          <line>284</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>942</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java</url>
+          <line>873</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>479</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java</url>
+          <line>357</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java</url>
+          <line>352</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>922</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>668</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryOrderController.java</url>
+          <line>162</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryOrderController.java</url>
+          <line>205</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>318</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java</url>
+          <line>534</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java</url>
+          <line>542</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayController.java</url>
+          <line>304</line>
+          <properties class="com.microsilver.mrcard.basicservice.controller.PayController" method="notify" />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayController.java</url>
+          <line>58</line>
+          <properties class="com.microsilver.mrcard.basicservice.controller.PayController" method="beforePayWx" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="49" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/DeliveryLatLngDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/service/SuperDeliveryInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/JuheMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-400">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/DeliveryAsUserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/service/SuperDeliveryOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="46" column="55" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/OrderStatusDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/PayWxVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/TestJedis.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/OrderIdVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/UserGetInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/MobileVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/CheckCodeDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/RespBaseDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/OrderCreateVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/service/LevelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/BaseObjectPoolConfig.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-471">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/GenericObjectPoolConfig.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisPoolConfig.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/OrderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/Subscriber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/SpringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/listener/KeyExpiredListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/DeliveryLatLngVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/common/Consts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/CheckBasicMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/ReceiptDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/DeliveryRobbOrderVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/dto/DeliveryInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/TestTask2.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="8" column="72" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/FxSdCarriageOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="166" column="29" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/enums/EWarning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/utils/AlipayRefundUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/TestTask1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/config/AlipayConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/MobileCheckCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/vo/DeliveryGetInfoVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/model/TokenType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/CommonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/PayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="200" column="66" selection-start-line="200" selection-start-column="66" selection-end-line="200" selection-end-column="66" />
+          <folding>
+            <element signature="method#beforePayWx#0;class#PayController#0" />
+            <element signature="method#CheckPayWxIsSuccess#0;class#PayController#0" />
+            <element signature="method#aliPayReady#0;class#PayController#0" />
+            <element signature="method#notify#0;class#PayController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="701" column="77" selection-start-line="701" selection-start-column="77" selection-end-line="701" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#isWork#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#getDeliveryLatLng#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#getUserReleaseOrder#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#deliveryRobbOrder#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#deliveryGetGoods#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#deliveryConfirmGoods#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#deliveryEvaluateUser#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#deliveryCenter#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#deliveryCenterInfo#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#getDeliveryAllOrders#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#getDeliveryWaitEvaluateOrders#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#getDeliveryFinishOrders#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#getDeliveryOrderInfo#0;class#SuperDeliveryOrderController#0" />
+            <element signature="method#addOrderSn#0;class#SuperDeliveryOrderController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/SuperDeliveryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="474" column="6" selection-start-line="474" selection-start-column="6" selection-end-line="474" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#perfectSuperDelivery#0;class#SuperDeliveryController#0" />
+            <element signature="method#superDeliveryLogin#0;class#SuperDeliveryController#0" />
+            <element signature="method#editSuperDeliveryPhone#0;class#SuperDeliveryController#0" />
+            <element signature="method#updateSuperDeliveryPwd#0;class#SuperDeliveryController#0" />
+            <element signature="method#uploadSuperDeliveryHeadImg#0;class#SuperDeliveryController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="908" column="46" selection-start-line="908" selection-start-column="27" selection-end-line="908" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#userRegister#0;class#UserController#0" />
+            <element signature="method#updatePwd#0;class#UserController#0" />
+            <element signature="method#userQuickLogin#0;class#UserController#0" />
+            <element signature="method#userLogin#0;class#UserController#0" />
+            <element signature="method#getUserInfo#0;class#UserController#0" />
+            <element signature="method#updateUserPhone#0;class#UserController#0" />
+            <element signature="method#addUserAddress#0;class#UserController#0" />
+            <element signature="method#updateUserAddress#0;class#UserController#0" />
+            <element signature="method#deleteUserAddress#0;class#UserController#0" />
+            <element signature="method#setUpDefaultAddress#0;class#UserController#0" />
+            <element signature="method#searchUserAddressList#0;class#UserController#0" />
+            <element signature="method#uploadUserHeadImg#0;class#UserController#0" />
+            <element signature="method#updateUserNickname#0;class#UserController#0" />
+            <element signature="method#getDeliversPosition#0;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/system-config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/controller/UserOrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4041">
+          <caret line="541" column="149" selection-start-line="541" selection-start-column="149" selection-end-line="541" selection-end-column="149" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createOrder#0;class#UserOrderController#0" />
+            <element signature="method#getOrderInfo#0;class#UserOrderController#0" />
+            <element signature="method#getReadyPayOrderInfo#0;class#UserOrderController#0" />
+            <element signature="method#getReadyRobOrderInfo#0;class#UserOrderController#0" />
+            <element signature="method#getOnGoingOrderInfo#0;class#UserOrderController#0" />
+            <element signature="method#userEvaluateDelivery#0;class#UserOrderController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/microsilver/mrcard/basicservice/core/filter/TokenFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="39" column="77" selection-start-line="39" selection-start-column="77" selection-end-line="39" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>superDelivery</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>BasicService</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

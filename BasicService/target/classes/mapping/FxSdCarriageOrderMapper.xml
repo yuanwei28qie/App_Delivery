@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxSdCarriageOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrder" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="member_id" property="memberId" jdbcType="BIGINT" />
+    <result column="deliver_id" property="deliverId" jdbcType="BIGINT" />
+    <result column="ordersn" property="ordersn" jdbcType="VARCHAR" />
+    <result column="service_desc" property="serviceDesc" jdbcType="VARCHAR" />
+    <result column="dispatch_price" property="dispatchPrice" jdbcType="DECIMAL" />
+    <result column="tip_price" property="tipPrice" jdbcType="DECIMAL" />
+    <result column="goods_price" property="goodsPrice" jdbcType="DECIMAL" />
+    <result column="start_name" property="startName" jdbcType="VARCHAR" />
+    <result column="start_phone" property="startPhone" jdbcType="VARCHAR" />
+    <result column="start_address" property="startAddress" jdbcType="VARCHAR" />
+    <result column="start_lat" property="startLat" jdbcType="VARCHAR" />
+    <result column="start_lng" property="startLng" jdbcType="VARCHAR" />
+    <result column="end_name" property="endName" jdbcType="VARCHAR" />
+    <result column="end_phone" property="endPhone" jdbcType="VARCHAR" />
+    <result column="end_address" property="endAddress" jdbcType="VARCHAR" />
+    <result column="end_lat" property="endLat" jdbcType="VARCHAR" />
+    <result column="end_lng" property="endLng" jdbcType="VARCHAR" />
+    <result column="mileages" property="mileages" jdbcType="DOUBLE" />
+    <result column="weight" property="weight" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="area_code" property="areaCode" jdbcType="INTEGER" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="member_delete" property="memberDelete" jdbcType="TINYINT" />
+    <result column="deliver_delete" property="deliverDelete" jdbcType="TINYINT" />
+    <result column="member_appraise" property="memberAppraise" jdbcType="TINYINT" />
+    <result column="member_appraise_desc" property="memberAppraiseDesc" jdbcType="VARCHAR" />
+    <result column="member_appraise_score" property="memberAppraiseScore" jdbcType="TINYINT" />
+    <result column="deliver_appraise" property="deliverAppraise" jdbcType="TINYINT" />
+    <result column="deliver_appraise_desc" property="deliverAppraiseDesc" jdbcType="VARCHAR" />
+    <result column="deliver_appraise_score" property="deliverAppraiseScore" jdbcType="TINYINT" />
+    <result column="pickup_number" property="pickupNumber" jdbcType="CHAR" />
+    <result column="source_type" property="sourceType" jdbcType="TINYINT" />
+    <result column="pay_type" property="payType" jdbcType="TINYINT" />
+    <result column="order_type" property="orderType" jdbcType="TINYINT" />
+    <result column="is_settlement" property="isSettlement" jdbcType="TINYINT" />
+    <result column="trans_id" property="transId" jdbcType="VARCHAR" />
+    <result column="agentid" property="agentid" jdbcType="BIGINT" />
+    <result column="order_time" property="orderTime" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="expired_time" property="expiredTime" jdbcType="INTEGER" />
+    <result column="goods_type" property="goodsType" jdbcType="SMALLINT" />
+    <result column="goods_remark" property="goodsRemark" jdbcType="VARCHAR" />
+    <result column="member_appraise_type" property="memberAppraiseType" jdbcType="SMALLINT" />
+    <result column="delivery_appraise_type" property="deliveryAppraiseType" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, member_id, deliver_id, ordersn, service_desc, dispatch_price, tip_price, goods_price, 
+    start_name, start_phone, start_address, start_lat, start_lng, end_name, end_phone, 
+    end_address, end_lat, end_lng, mileages, weight, remark, area_code, pic, member_delete, 
+    deliver_delete, member_appraise, member_appraise_desc, member_appraise_score, deliver_appraise, 
+    deliver_appraise_desc, deliver_appraise_score, pickup_number, source_type, pay_type, 
+    order_type, is_settlement, trans_id, agentid, order_time, create_time, status, expired_time, 
+    goods_type, goods_remark, member_appraise_type, delivery_appraise_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_sd_carriage_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_sd_carriage_order
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fx_sd_carriage_order
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrderExample" >
+    delete from fx_sd_carriage_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrder" >
+    insert into fx_sd_carriage_order (id, member_id, deliver_id, 
+      ordersn, service_desc, dispatch_price, 
+      tip_price, goods_price, start_name, 
+      start_phone, start_address, start_lat, 
+      start_lng, end_name, end_phone, 
+      end_address, end_lat, end_lng, 
+      mileages, weight, remark, 
+      area_code, pic, member_delete, 
+      deliver_delete, member_appraise, member_appraise_desc, 
+      member_appraise_score, deliver_appraise, deliver_appraise_desc, 
+      deliver_appraise_score, pickup_number, source_type, 
+      pay_type, order_type, is_settlement, 
+      trans_id, agentid, order_time, 
+      create_time, status, expired_time, 
+      goods_type, goods_remark, member_appraise_type, 
+      delivery_appraise_type)
+    values (#{id,jdbcType=BIGINT}, #{memberId,jdbcType=BIGINT}, #{deliverId,jdbcType=BIGINT}, 
+      #{ordersn,jdbcType=VARCHAR}, #{serviceDesc,jdbcType=VARCHAR}, #{dispatchPrice,jdbcType=DECIMAL}, 
+      #{tipPrice,jdbcType=DECIMAL}, #{goodsPrice,jdbcType=DECIMAL}, #{startName,jdbcType=VARCHAR}, 
+      #{startPhone,jdbcType=VARCHAR}, #{startAddress,jdbcType=VARCHAR}, #{startLat,jdbcType=VARCHAR}, 
+      #{startLng,jdbcType=VARCHAR}, #{endName,jdbcType=VARCHAR}, #{endPhone,jdbcType=VARCHAR}, 
+      #{endAddress,jdbcType=VARCHAR}, #{endLat,jdbcType=VARCHAR}, #{endLng,jdbcType=VARCHAR}, 
+      #{mileages,jdbcType=DOUBLE}, #{weight,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{areaCode,jdbcType=INTEGER}, #{pic,jdbcType=VARCHAR}, #{memberDelete,jdbcType=TINYINT}, 
+      #{deliverDelete,jdbcType=TINYINT}, #{memberAppraise,jdbcType=TINYINT}, #{memberAppraiseDesc,jdbcType=VARCHAR}, 
+      #{memberAppraiseScore,jdbcType=TINYINT}, #{deliverAppraise,jdbcType=TINYINT}, #{deliverAppraiseDesc,jdbcType=VARCHAR}, 
+      #{deliverAppraiseScore,jdbcType=TINYINT}, #{pickupNumber,jdbcType=CHAR}, #{sourceType,jdbcType=TINYINT}, 
+      #{payType,jdbcType=TINYINT}, #{orderType,jdbcType=TINYINT}, #{isSettlement,jdbcType=TINYINT}, 
+      #{transId,jdbcType=VARCHAR}, #{agentid,jdbcType=BIGINT}, #{orderTime,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{expiredTime,jdbcType=INTEGER}, 
+      #{goodsType,jdbcType=SMALLINT}, #{goodsRemark,jdbcType=VARCHAR}, #{memberAppraiseType,jdbcType=SMALLINT}, 
+      #{deliveryAppraiseType,jdbcType=SMALLINT})
+  </insert>
+
+  <insert id="insertIntoAndReturnId" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrder"   useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    insert into fx_sd_carriage_order (id, member_id, deliver_id,
+      ordersn, service_desc, dispatch_price,
+      tip_price, goods_price, start_name,
+      start_phone, start_address, start_lat,
+      start_lng, end_name, end_phone,
+      end_address, end_lat, end_lng,
+      mileages, weight, remark,
+      area_code, pic, member_delete,
+      deliver_delete, member_appraise, member_appraise_desc,
+      member_appraise_score, deliver_appraise, deliver_appraise_desc,
+      deliver_appraise_score, pickup_number, source_type,
+      pay_type, order_type, is_settlement,
+      trans_id, agentid, order_time,
+      create_time, status, expired_time,
+      goods_type, goods_remark, member_appraise_type,
+      delivery_appraise_type)
+    values (#{id,jdbcType=BIGINT}, #{memberId,jdbcType=BIGINT}, #{deliverId,jdbcType=BIGINT},
+      #{ordersn,jdbcType=VARCHAR}, #{serviceDesc,jdbcType=VARCHAR}, #{dispatchPrice,jdbcType=DECIMAL},
+      #{tipPrice,jdbcType=DECIMAL}, #{goodsPrice,jdbcType=DECIMAL}, #{startName,jdbcType=VARCHAR},
+      #{startPhone,jdbcType=VARCHAR}, #{startAddress,jdbcType=VARCHAR}, #{startLat,jdbcType=VARCHAR},
+      #{startLng,jdbcType=VARCHAR}, #{endName,jdbcType=VARCHAR}, #{endPhone,jdbcType=VARCHAR},
+      #{endAddress,jdbcType=VARCHAR}, #{endLat,jdbcType=VARCHAR}, #{endLng,jdbcType=VARCHAR},
+      #{mileages,jdbcType=DOUBLE}, #{weight,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR},
+      #{areaCode,jdbcType=INTEGER}, #{pic,jdbcType=VARCHAR}, #{memberDelete,jdbcType=TINYINT},
+      #{deliverDelete,jdbcType=TINYINT}, #{memberAppraise,jdbcType=TINYINT}, #{memberAppraiseDesc,jdbcType=VARCHAR},
+      #{memberAppraiseScore,jdbcType=TINYINT}, #{deliverAppraise,jdbcType=TINYINT}, #{deliverAppraiseDesc,jdbcType=VARCHAR},
+      #{deliverAppraiseScore,jdbcType=TINYINT}, #{pickupNumber,jdbcType=CHAR}, #{sourceType,jdbcType=TINYINT},
+      #{payType,jdbcType=TINYINT}, #{orderType,jdbcType=TINYINT}, #{isSettlement,jdbcType=TINYINT},
+      #{transId,jdbcType=VARCHAR}, #{agentid,jdbcType=BIGINT}, #{orderTime,jdbcType=INTEGER},
+      #{createTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{expiredTime,jdbcType=INTEGER},
+      #{goodsType,jdbcType=SMALLINT}, #{goodsRemark,jdbcType=VARCHAR}, #{memberAppraiseType,jdbcType=SMALLINT},
+      #{deliveryAppraiseType,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrder" >
+    insert into fx_sd_carriage_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="memberId != null" >
+        member_id,
+      </if>
+      <if test="deliverId != null" >
+        deliver_id,
+      </if>
+      <if test="ordersn != null" >
+        ordersn,
+      </if>
+      <if test="serviceDesc != null" >
+        service_desc,
+      </if>
+      <if test="dispatchPrice != null" >
+        dispatch_price,
+      </if>
+      <if test="tipPrice != null" >
+        tip_price,
+      </if>
+      <if test="goodsPrice != null" >
+        goods_price,
+      </if>
+      <if test="startName != null" >
+        start_name,
+      </if>
+      <if test="startPhone != null" >
+        start_phone,
+      </if>
+      <if test="startAddress != null" >
+        start_address,
+      </if>
+      <if test="startLat != null" >
+        start_lat,
+      </if>
+      <if test="startLng != null" >
+        start_lng,
+      </if>
+      <if test="endName != null" >
+        end_name,
+      </if>
+      <if test="endPhone != null" >
+        end_phone,
+      </if>
+      <if test="endAddress != null" >
+        end_address,
+      </if>
+      <if test="endLat != null" >
+        end_lat,
+      </if>
+      <if test="endLng != null" >
+        end_lng,
+      </if>
+      <if test="mileages != null" >
+        mileages,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="areaCode != null" >
+        area_code,
+      </if>
+      <if test="pic != null" >
+        pic,
+      </if>
+      <if test="memberDelete != null" >
+        member_delete,
+      </if>
+      <if test="deliverDelete != null" >
+        deliver_delete,
+      </if>
+      <if test="memberAppraise != null" >
+        member_appraise,
+      </if>
+      <if test="memberAppraiseDesc != null" >
+        member_appraise_desc,
+      </if>
+      <if test="memberAppraiseScore != null" >
+        member_appraise_score,
+      </if>
+      <if test="deliverAppraise != null" >
+        deliver_appraise,
+      </if>
+      <if test="deliverAppraiseDesc != null" >
+        deliver_appraise_desc,
+      </if>
+      <if test="deliverAppraiseScore != null" >
+        deliver_appraise_score,
+      </if>
+      <if test="pickupNumber != null" >
+        pickup_number,
+      </if>
+      <if test="sourceType != null" >
+        source_type,
+      </if>
+      <if test="payType != null" >
+        pay_type,
+      </if>
+      <if test="orderType != null" >
+        order_type,
+      </if>
+      <if test="isSettlement != null" >
+        is_settlement,
+      </if>
+      <if test="transId != null" >
+        trans_id,
+      </if>
+      <if test="agentid != null" >
+        agentid,
+      </if>
+      <if test="orderTime != null" >
+        order_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="expiredTime != null" >
+        expired_time,
+      </if>
+      <if test="goodsType != null" >
+        goods_type,
+      </if>
+      <if test="goodsRemark != null" >
+        goods_remark,
+      </if>
+      <if test="memberAppraiseType != null" >
+        member_appraise_type,
+      </if>
+      <if test="deliveryAppraiseType != null" >
+        delivery_appraise_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="memberId != null" >
+        #{memberId,jdbcType=BIGINT},
+      </if>
+      <if test="deliverId != null" >
+        #{deliverId,jdbcType=BIGINT},
+      </if>
+      <if test="ordersn != null" >
+        #{ordersn,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceDesc != null" >
+        #{serviceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchPrice != null" >
+        #{dispatchPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tipPrice != null" >
+        #{tipPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPrice != null" >
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="startName != null" >
+        #{startName,jdbcType=VARCHAR},
+      </if>
+      <if test="startPhone != null" >
+        #{startPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="startAddress != null" >
+        #{startAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="startLat != null" >
+        #{startLat,jdbcType=VARCHAR},
+      </if>
+      <if test="startLng != null" >
+        #{startLng,jdbcType=VARCHAR},
+      </if>
+      <if test="endName != null" >
+        #{endName,jdbcType=VARCHAR},
+      </if>
+      <if test="endPhone != null" >
+        #{endPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="endAddress != null" >
+        #{endAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="endLat != null" >
+        #{endLat,jdbcType=VARCHAR},
+      </if>
+      <if test="endLng != null" >
+        #{endLng,jdbcType=VARCHAR},
+      </if>
+      <if test="mileages != null" >
+        #{mileages,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="pic != null" >
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="memberDelete != null" >
+        #{memberDelete,jdbcType=TINYINT},
+      </if>
+      <if test="deliverDelete != null" >
+        #{deliverDelete,jdbcType=TINYINT},
+      </if>
+      <if test="memberAppraise != null" >
+        #{memberAppraise,jdbcType=TINYINT},
+      </if>
+      <if test="memberAppraiseDesc != null" >
+        #{memberAppraiseDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAppraiseScore != null" >
+        #{memberAppraiseScore,jdbcType=TINYINT},
+      </if>
+      <if test="deliverAppraise != null" >
+        #{deliverAppraise,jdbcType=TINYINT},
+      </if>
+      <if test="deliverAppraiseDesc != null" >
+        #{deliverAppraiseDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverAppraiseScore != null" >
+        #{deliverAppraiseScore,jdbcType=TINYINT},
+      </if>
+      <if test="pickupNumber != null" >
+        #{pickupNumber,jdbcType=CHAR},
+      </if>
+      <if test="sourceType != null" >
+        #{sourceType,jdbcType=TINYINT},
+      </if>
+      <if test="payType != null" >
+        #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="orderType != null" >
+        #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="isSettlement != null" >
+        #{isSettlement,jdbcType=TINYINT},
+      </if>
+      <if test="transId != null" >
+        #{transId,jdbcType=VARCHAR},
+      </if>
+      <if test="agentid != null" >
+        #{agentid,jdbcType=BIGINT},
+      </if>
+      <if test="orderTime != null" >
+        #{orderTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="expiredTime != null" >
+        #{expiredTime,jdbcType=INTEGER},
+      </if>
+      <if test="goodsType != null" >
+        #{goodsType,jdbcType=SMALLINT},
+      </if>
+      <if test="goodsRemark != null" >
+        #{goodsRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAppraiseType != null" >
+        #{memberAppraiseType,jdbcType=SMALLINT},
+      </if>
+      <if test="deliveryAppraiseType != null" >
+        #{deliveryAppraiseType,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrderExample" resultType="java.lang.Integer" >
+    select count(*) from fx_sd_carriage_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_sd_carriage_order
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.memberId != null" >
+        member_id = #{record.memberId,jdbcType=BIGINT},
+      </if>
+      <if test="record.deliverId != null" >
+        deliver_id = #{record.deliverId,jdbcType=BIGINT},
+      </if>
+      <if test="record.ordersn != null" >
+        ordersn = #{record.ordersn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serviceDesc != null" >
+        service_desc = #{record.serviceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dispatchPrice != null" >
+        dispatch_price = #{record.dispatchPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.tipPrice != null" >
+        tip_price = #{record.tipPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsPrice != null" >
+        goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.startName != null" >
+        start_name = #{record.startName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startPhone != null" >
+        start_phone = #{record.startPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startAddress != null" >
+        start_address = #{record.startAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startLat != null" >
+        start_lat = #{record.startLat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startLng != null" >
+        start_lng = #{record.startLng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endName != null" >
+        end_name = #{record.endName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endPhone != null" >
+        end_phone = #{record.endPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endAddress != null" >
+        end_address = #{record.endAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endLat != null" >
+        end_lat = #{record.endLat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endLng != null" >
+        end_lng = #{record.endLng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mileages != null" >
+        mileages = #{record.mileages,jdbcType=DOUBLE},
+      </if>
+      <if test="record.weight != null" >
+        weight = #{record.weight,jdbcType=INTEGER},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaCode != null" >
+        area_code = #{record.areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.pic != null" >
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memberDelete != null" >
+        member_delete = #{record.memberDelete,jdbcType=TINYINT},
+      </if>
+      <if test="record.deliverDelete != null" >
+        deliver_delete = #{record.deliverDelete,jdbcType=TINYINT},
+      </if>
+      <if test="record.memberAppraise != null" >
+        member_appraise = #{record.memberAppraise,jdbcType=TINYINT},
+      </if>
+      <if test="record.memberAppraiseDesc != null" >
+        member_appraise_desc = #{record.memberAppraiseDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memberAppraiseScore != null" >
+        member_appraise_score = #{record.memberAppraiseScore,jdbcType=TINYINT},
+      </if>
+      <if test="record.deliverAppraise != null" >
+        deliver_appraise = #{record.deliverAppraise,jdbcType=TINYINT},
+      </if>
+      <if test="record.deliverAppraiseDesc != null" >
+        deliver_appraise_desc = #{record.deliverAppraiseDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deliverAppraiseScore != null" >
+        deliver_appraise_score = #{record.deliverAppraiseScore,jdbcType=TINYINT},
+      </if>
+      <if test="record.pickupNumber != null" >
+        pickup_number = #{record.pickupNumber,jdbcType=CHAR},
+      </if>
+      <if test="record.sourceType != null" >
+        source_type = #{record.sourceType,jdbcType=TINYINT},
+      </if>
+      <if test="record.payType != null" >
+        pay_type = #{record.payType,jdbcType=TINYINT},
+      </if>
+      <if test="record.orderType != null" >
+        order_type = #{record.orderType,jdbcType=TINYINT},
+      </if>
+      <if test="record.isSettlement != null" >
+        is_settlement = #{record.isSettlement,jdbcType=TINYINT},
+      </if>
+      <if test="record.transId != null" >
+        trans_id = #{record.transId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agentid != null" >
+        agentid = #{record.agentid,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderTime != null" >
+        order_time = #{record.orderTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.expiredTime != null" >
+        expired_time = #{record.expiredTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsType != null" >
+        goods_type = #{record.goodsType,jdbcType=SMALLINT},
+      </if>
+      <if test="record.goodsRemark != null" >
+        goods_remark = #{record.goodsRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.memberAppraiseType != null" >
+        member_appraise_type = #{record.memberAppraiseType,jdbcType=SMALLINT},
+      </if>
+      <if test="record.deliveryAppraiseType != null" >
+        delivery_appraise_type = #{record.deliveryAppraiseType,jdbcType=SMALLINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_sd_carriage_order
+    set id = #{record.id,jdbcType=BIGINT},
+      member_id = #{record.memberId,jdbcType=BIGINT},
+      deliver_id = #{record.deliverId,jdbcType=BIGINT},
+      ordersn = #{record.ordersn,jdbcType=VARCHAR},
+      service_desc = #{record.serviceDesc,jdbcType=VARCHAR},
+      dispatch_price = #{record.dispatchPrice,jdbcType=DECIMAL},
+      tip_price = #{record.tipPrice,jdbcType=DECIMAL},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      start_name = #{record.startName,jdbcType=VARCHAR},
+      start_phone = #{record.startPhone,jdbcType=VARCHAR},
+      start_address = #{record.startAddress,jdbcType=VARCHAR},
+      start_lat = #{record.startLat,jdbcType=VARCHAR},
+      start_lng = #{record.startLng,jdbcType=VARCHAR},
+      end_name = #{record.endName,jdbcType=VARCHAR},
+      end_phone = #{record.endPhone,jdbcType=VARCHAR},
+      end_address = #{record.endAddress,jdbcType=VARCHAR},
+      end_lat = #{record.endLat,jdbcType=VARCHAR},
+      end_lng = #{record.endLng,jdbcType=VARCHAR},
+      mileages = #{record.mileages,jdbcType=DOUBLE},
+      weight = #{record.weight,jdbcType=INTEGER},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      area_code = #{record.areaCode,jdbcType=INTEGER},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      member_delete = #{record.memberDelete,jdbcType=TINYINT},
+      deliver_delete = #{record.deliverDelete,jdbcType=TINYINT},
+      member_appraise = #{record.memberAppraise,jdbcType=TINYINT},
+      member_appraise_desc = #{record.memberAppraiseDesc,jdbcType=VARCHAR},
+      member_appraise_score = #{record.memberAppraiseScore,jdbcType=TINYINT},
+      deliver_appraise = #{record.deliverAppraise,jdbcType=TINYINT},
+      deliver_appraise_desc = #{record.deliverAppraiseDesc,jdbcType=VARCHAR},
+      deliver_appraise_score = #{record.deliverAppraiseScore,jdbcType=TINYINT},
+      pickup_number = #{record.pickupNumber,jdbcType=CHAR},
+      source_type = #{record.sourceType,jdbcType=TINYINT},
+      pay_type = #{record.payType,jdbcType=TINYINT},
+      order_type = #{record.orderType,jdbcType=TINYINT},
+      is_settlement = #{record.isSettlement,jdbcType=TINYINT},
+      trans_id = #{record.transId,jdbcType=VARCHAR},
+      agentid = #{record.agentid,jdbcType=BIGINT},
+      order_time = #{record.orderTime,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT},
+      expired_time = #{record.expiredTime,jdbcType=INTEGER},
+      goods_type = #{record.goodsType,jdbcType=SMALLINT},
+      goods_remark = #{record.goodsRemark,jdbcType=VARCHAR},
+      member_appraise_type = #{record.memberAppraiseType,jdbcType=SMALLINT},
+      delivery_appraise_type = #{record.deliveryAppraiseType,jdbcType=SMALLINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrder" >
+    update fx_sd_carriage_order
+    <set >
+      <if test="memberId != null" >
+        member_id = #{memberId,jdbcType=BIGINT},
+      </if>
+      <if test="deliverId != null" >
+        deliver_id = #{deliverId,jdbcType=BIGINT},
+      </if>
+      <if test="ordersn != null" >
+        ordersn = #{ordersn,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceDesc != null" >
+        service_desc = #{serviceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dispatchPrice != null" >
+        dispatch_price = #{dispatchPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tipPrice != null" >
+        tip_price = #{tipPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPrice != null" >
+        goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="startName != null" >
+        start_name = #{startName,jdbcType=VARCHAR},
+      </if>
+      <if test="startPhone != null" >
+        start_phone = #{startPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="startAddress != null" >
+        start_address = #{startAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="startLat != null" >
+        start_lat = #{startLat,jdbcType=VARCHAR},
+      </if>
+      <if test="startLng != null" >
+        start_lng = #{startLng,jdbcType=VARCHAR},
+      </if>
+      <if test="endName != null" >
+        end_name = #{endName,jdbcType=VARCHAR},
+      </if>
+      <if test="endPhone != null" >
+        end_phone = #{endPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="endAddress != null" >
+        end_address = #{endAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="endLat != null" >
+        end_lat = #{endLat,jdbcType=VARCHAR},
+      </if>
+      <if test="endLng != null" >
+        end_lng = #{endLng,jdbcType=VARCHAR},
+      </if>
+      <if test="mileages != null" >
+        mileages = #{mileages,jdbcType=DOUBLE},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null" >
+        area_code = #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="pic != null" >
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="memberDelete != null" >
+        member_delete = #{memberDelete,jdbcType=TINYINT},
+      </if>
+      <if test="deliverDelete != null" >
+        deliver_delete = #{deliverDelete,jdbcType=TINYINT},
+      </if>
+      <if test="memberAppraise != null" >
+        member_appraise = #{memberAppraise,jdbcType=TINYINT},
+      </if>
+      <if test="memberAppraiseDesc != null" >
+        member_appraise_desc = #{memberAppraiseDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAppraiseScore != null" >
+        member_appraise_score = #{memberAppraiseScore,jdbcType=TINYINT},
+      </if>
+      <if test="deliverAppraise != null" >
+        deliver_appraise = #{deliverAppraise,jdbcType=TINYINT},
+      </if>
+      <if test="deliverAppraiseDesc != null" >
+        deliver_appraise_desc = #{deliverAppraiseDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="deliverAppraiseScore != null" >
+        deliver_appraise_score = #{deliverAppraiseScore,jdbcType=TINYINT},
+      </if>
+      <if test="pickupNumber != null" >
+        pickup_number = #{pickupNumber,jdbcType=CHAR},
+      </if>
+      <if test="sourceType != null" >
+        source_type = #{sourceType,jdbcType=TINYINT},
+      </if>
+      <if test="payType != null" >
+        pay_type = #{payType,jdbcType=TINYINT},
+      </if>
+      <if test="orderType != null" >
+        order_type = #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="isSettlement != null" >
+        is_settlement = #{isSettlement,jdbcType=TINYINT},
+      </if>
+      <if test="transId != null" >
+        trans_id = #{transId,jdbcType=VARCHAR},
+      </if>
+      <if test="agentid != null" >
+        agentid = #{agentid,jdbcType=BIGINT},
+      </if>
+      <if test="orderTime != null" >
+        order_time = #{orderTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="expiredTime != null" >
+        expired_time = #{expiredTime,jdbcType=INTEGER},
+      </if>
+      <if test="goodsType != null" >
+        goods_type = #{goodsType,jdbcType=SMALLINT},
+      </if>
+      <if test="goodsRemark != null" >
+        goods_remark = #{goodsRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="memberAppraiseType != null" >
+        member_appraise_type = #{memberAppraiseType,jdbcType=SMALLINT},
+      </if>
+      <if test="deliveryAppraiseType != null" >
+        delivery_appraise_type = #{deliveryAppraiseType,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxSdCarriageOrder" >
+    update fx_sd_carriage_order
+    set member_id = #{memberId,jdbcType=BIGINT},
+      deliver_id = #{deliverId,jdbcType=BIGINT},
+      ordersn = #{ordersn,jdbcType=VARCHAR},
+      service_desc = #{serviceDesc,jdbcType=VARCHAR},
+      dispatch_price = #{dispatchPrice,jdbcType=DECIMAL},
+      tip_price = #{tipPrice,jdbcType=DECIMAL},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      start_name = #{startName,jdbcType=VARCHAR},
+      start_phone = #{startPhone,jdbcType=VARCHAR},
+      start_address = #{startAddress,jdbcType=VARCHAR},
+      start_lat = #{startLat,jdbcType=VARCHAR},
+      start_lng = #{startLng,jdbcType=VARCHAR},
+      end_name = #{endName,jdbcType=VARCHAR},
+      end_phone = #{endPhone,jdbcType=VARCHAR},
+      end_address = #{endAddress,jdbcType=VARCHAR},
+      end_lat = #{endLat,jdbcType=VARCHAR},
+      end_lng = #{endLng,jdbcType=VARCHAR},
+      mileages = #{mileages,jdbcType=DOUBLE},
+      weight = #{weight,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=INTEGER},
+      pic = #{pic,jdbcType=VARCHAR},
+      member_delete = #{memberDelete,jdbcType=TINYINT},
+      deliver_delete = #{deliverDelete,jdbcType=TINYINT},
+      member_appraise = #{memberAppraise,jdbcType=TINYINT},
+      member_appraise_desc = #{memberAppraiseDesc,jdbcType=VARCHAR},
+      member_appraise_score = #{memberAppraiseScore,jdbcType=TINYINT},
+      deliver_appraise = #{deliverAppraise,jdbcType=TINYINT},
+      deliver_appraise_desc = #{deliverAppraiseDesc,jdbcType=VARCHAR},
+      deliver_appraise_score = #{deliverAppraiseScore,jdbcType=TINYINT},
+      pickup_number = #{pickupNumber,jdbcType=CHAR},
+      source_type = #{sourceType,jdbcType=TINYINT},
+      pay_type = #{payType,jdbcType=TINYINT},
+      order_type = #{orderType,jdbcType=TINYINT},
+      is_settlement = #{isSettlement,jdbcType=TINYINT},
+      trans_id = #{transId,jdbcType=VARCHAR},
+      agentid = #{agentid,jdbcType=BIGINT},
+      order_time = #{orderTime,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      expired_time = #{expiredTime,jdbcType=INTEGER},
+      goods_type = #{goodsType,jdbcType=SMALLINT},
+      goods_remark = #{goodsRemark,jdbcType=VARCHAR},
+      member_appraise_type = #{memberAppraiseType,jdbcType=SMALLINT},
+      delivery_appraise_type = #{deliveryAppraiseType,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

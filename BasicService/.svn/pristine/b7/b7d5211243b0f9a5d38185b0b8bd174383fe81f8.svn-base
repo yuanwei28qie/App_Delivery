@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxDocumentDownloadMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="parse" property="parse" jdbcType="TINYINT" />
+    <result column="template" property="template" jdbcType="VARCHAR" />
+    <result column="file_id" property="fileId" jdbcType="INTEGER" />
+    <result column="download" property="download" jdbcType="INTEGER" />
+    <result column="size" property="size" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, parse, template, file_id, download, size
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownloadExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fx_document_download
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownloadExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_document_download
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from fx_document_download
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fx_document_download
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownloadExample" >
+    delete from fx_document_download
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" >
+    insert into fx_document_download (id, parse, template, 
+      file_id, download, size, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{parse,jdbcType=TINYINT}, #{template,jdbcType=VARCHAR}, 
+      #{fileId,jdbcType=INTEGER}, #{download,jdbcType=INTEGER}, #{size,jdbcType=BIGINT}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" >
+    insert into fx_document_download
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parse != null" >
+        parse,
+      </if>
+      <if test="template != null" >
+        template,
+      </if>
+      <if test="fileId != null" >
+        file_id,
+      </if>
+      <if test="download != null" >
+        download,
+      </if>
+      <if test="size != null" >
+        size,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="parse != null" >
+        #{parse,jdbcType=TINYINT},
+      </if>
+      <if test="template != null" >
+        #{template,jdbcType=VARCHAR},
+      </if>
+      <if test="fileId != null" >
+        #{fileId,jdbcType=INTEGER},
+      </if>
+      <if test="download != null" >
+        #{download,jdbcType=INTEGER},
+      </if>
+      <if test="size != null" >
+        #{size,jdbcType=BIGINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownloadExample" resultType="java.lang.Integer" >
+    select count(*) from fx_document_download
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_document_download
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.parse != null" >
+        parse = #{record.parse,jdbcType=TINYINT},
+      </if>
+      <if test="record.template != null" >
+        template = #{record.template,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileId != null" >
+        file_id = #{record.fileId,jdbcType=INTEGER},
+      </if>
+      <if test="record.download != null" >
+        download = #{record.download,jdbcType=INTEGER},
+      </if>
+      <if test="record.size != null" >
+        size = #{record.size,jdbcType=BIGINT},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update fx_document_download
+    set id = #{record.id,jdbcType=INTEGER},
+      parse = #{record.parse,jdbcType=TINYINT},
+      template = #{record.template,jdbcType=VARCHAR},
+      file_id = #{record.fileId,jdbcType=INTEGER},
+      download = #{record.download,jdbcType=INTEGER},
+      size = #{record.size,jdbcType=BIGINT},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_document_download
+    set id = #{record.id,jdbcType=INTEGER},
+      parse = #{record.parse,jdbcType=TINYINT},
+      template = #{record.template,jdbcType=VARCHAR},
+      file_id = #{record.fileId,jdbcType=INTEGER},
+      download = #{record.download,jdbcType=INTEGER},
+      size = #{record.size,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" >
+    update fx_document_download
+    <set >
+      <if test="parse != null" >
+        parse = #{parse,jdbcType=TINYINT},
+      </if>
+      <if test="template != null" >
+        template = #{template,jdbcType=VARCHAR},
+      </if>
+      <if test="fileId != null" >
+        file_id = #{fileId,jdbcType=INTEGER},
+      </if>
+      <if test="download != null" >
+        download = #{download,jdbcType=INTEGER},
+      </if>
+      <if test="size != null" >
+        size = #{size,jdbcType=BIGINT},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" >
+    update fx_document_download
+    set parse = #{parse,jdbcType=TINYINT},
+      template = #{template,jdbcType=VARCHAR},
+      file_id = #{fileId,jdbcType=INTEGER},
+      download = #{download,jdbcType=INTEGER},
+      size = #{size,jdbcType=BIGINT},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentDownload" >
+    update fx_document_download
+    set parse = #{parse,jdbcType=TINYINT},
+      template = #{template,jdbcType=VARCHAR},
+      file_id = #{fileId,jdbcType=INTEGER},
+      download = #{download,jdbcType=INTEGER},
+      size = #{size,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

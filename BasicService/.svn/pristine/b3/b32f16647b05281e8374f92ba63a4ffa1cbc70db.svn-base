@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxUcenterMemberMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxUcenterMember" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="CHAR" />
+    <result column="password" property="password" jdbcType="CHAR" />
+    <result column="email" property="email" jdbcType="CHAR" />
+    <result column="mobile" property="mobile" jdbcType="CHAR" />
+    <result column="reg_time" property="regTime" jdbcType="INTEGER" />
+    <result column="reg_ip" property="regIp" jdbcType="BIGINT" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="INTEGER" />
+    <result column="last_login_ip" property="lastLoginIp" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="flag" property="flag" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, username, password, email, mobile, reg_time, reg_ip, last_login_time, last_login_ip, 
+    update_time, status, flag
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMemberExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_ucenter_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_ucenter_member
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fx_ucenter_member
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMemberExample" >
+    delete from fx_ucenter_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMember" >
+    insert into fx_ucenter_member (id, username, password, 
+      email, mobile, reg_time, reg_ip, 
+      last_login_time, last_login_ip, update_time, 
+      status, flag)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, #{password,jdbcType=CHAR}, 
+      #{email,jdbcType=CHAR}, #{mobile,jdbcType=CHAR}, #{regTime,jdbcType=INTEGER}, #{regIp,jdbcType=BIGINT}, 
+      #{lastLoginTime,jdbcType=INTEGER}, #{lastLoginIp,jdbcType=BIGINT}, #{updateTime,jdbcType=INTEGER}, 
+      #{status,jdbcType=TINYINT}, #{flag,jdbcType=SMALLINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMember" >
+    insert into fx_ucenter_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="regTime != null" >
+        reg_time,
+      </if>
+      <if test="regIp != null" >
+        reg_ip,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=CHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=CHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=CHAR},
+      </if>
+      <if test="regTime != null" >
+        #{regTime,jdbcType=INTEGER},
+      </if>
+      <if test="regIp != null" >
+        #{regIp,jdbcType=BIGINT},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=SMALLINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMemberExample" resultType="java.lang.Integer" >
+    select count(*) from fx_ucenter_member
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_ucenter_member
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=CHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=CHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=CHAR},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=CHAR},
+      </if>
+      <if test="record.regTime != null" >
+        reg_time = #{record.regTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.regIp != null" >
+        reg_ip = #{record.regIp,jdbcType=BIGINT},
+      </if>
+      <if test="record.lastLoginTime != null" >
+        last_login_time = #{record.lastLoginTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastLoginIp != null" >
+        last_login_ip = #{record.lastLoginIp,jdbcType=BIGINT},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.flag != null" >
+        flag = #{record.flag,jdbcType=SMALLINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_ucenter_member
+    set id = #{record.id,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=CHAR},
+      password = #{record.password,jdbcType=CHAR},
+      email = #{record.email,jdbcType=CHAR},
+      mobile = #{record.mobile,jdbcType=CHAR},
+      reg_time = #{record.regTime,jdbcType=INTEGER},
+      reg_ip = #{record.regIp,jdbcType=BIGINT},
+      last_login_time = #{record.lastLoginTime,jdbcType=INTEGER},
+      last_login_ip = #{record.lastLoginIp,jdbcType=BIGINT},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT},
+      flag = #{record.flag,jdbcType=SMALLINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMember" >
+    update fx_ucenter_member
+    <set >
+      <if test="username != null" >
+        username = #{username,jdbcType=CHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=CHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=CHAR},
+      </if>
+      <if test="regTime != null" >
+        reg_time = #{regTime,jdbcType=INTEGER},
+      </if>
+      <if test="regIp != null" >
+        reg_ip = #{regIp,jdbcType=BIGINT},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip = #{lastLoginIp,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=SMALLINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxUcenterMember" >
+    update fx_ucenter_member
+    set username = #{username,jdbcType=CHAR},
+      password = #{password,jdbcType=CHAR},
+      email = #{email,jdbcType=CHAR},
+      mobile = #{mobile,jdbcType=CHAR},
+      reg_time = #{regTime,jdbcType=INTEGER},
+      reg_ip = #{regIp,jdbcType=BIGINT},
+      last_login_time = #{lastLoginTime,jdbcType=INTEGER},
+      last_login_ip = #{lastLoginIp,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      flag = #{flag,jdbcType=SMALLINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

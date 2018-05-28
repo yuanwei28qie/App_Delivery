@@ -1,0 +1,8 @@
+{
+  "timestamp": 1527152126494,
+  "status": 500,
+  "error": "Internal Server Error",
+  "exception": "org.springframework.transaction.CannotCreateTransactionException",
+  "message": "Could not open JDBC Connection for transaction; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure\n\nThe last packet successfully received from the server was 1,036,714 milliseconds ago.  The last packet sent successfully to the server was 18,921 milliseconds ago.",
+  "path": "/api/pay/notify"
+}

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxSdUserAgentinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="seatnumber" property="seatnumber" jdbcType="VARCHAR" />
+    <result column="realname" property="realname" jdbcType="VARCHAR" />
+    <result column="enterprisename" property="enterprisename" jdbcType="VARCHAR" />
+    <result column="identity_card_no" property="identityCardNo" jdbcType="VARCHAR" />
+    <result column="identity_card_front" property="identityCardFront" jdbcType="VARCHAR" />
+    <result column="identity_card_back" property="identityCardBack" jdbcType="VARCHAR" />
+    <result column="identity_card_group" property="identityCardGroup" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="county" property="county" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, mobile, seatnumber, realname, enterprisename, identity_card_no, identity_card_front, 
+    identity_card_back, identity_card_group, address, create_time, county
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_sd_user_agentinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_sd_user_agentinfo
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from fx_sd_user_agentinfo
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfoExample" >
+    delete from fx_sd_user_agentinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    insert into fx_sd_user_agentinfo (id, mobile, seatnumber, 
+      realname, enterprisename, identity_card_no, 
+      identity_card_front, identity_card_back, identity_card_group, 
+      address, create_time, county
+      )
+    values (#{id,jdbcType=BIGINT}, #{mobile,jdbcType=VARCHAR}, #{seatnumber,jdbcType=VARCHAR}, 
+      #{realname,jdbcType=VARCHAR}, #{enterprisename,jdbcType=VARCHAR}, #{identityCardNo,jdbcType=VARCHAR}, 
+      #{identityCardFront,jdbcType=VARCHAR}, #{identityCardBack,jdbcType=VARCHAR}, #{identityCardGroup,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{createTime,jdbcType=INTEGER}, #{county,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    insert into fx_sd_user_agentinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="seatnumber != null" >
+        seatnumber,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename,
+      </if>
+      <if test="identityCardNo != null" >
+        identity_card_no,
+      </if>
+      <if test="identityCardFront != null" >
+        identity_card_front,
+      </if>
+      <if test="identityCardBack != null" >
+        identity_card_back,
+      </if>
+      <if test="identityCardGroup != null" >
+        identity_card_group,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="county != null" >
+        county,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="seatnumber != null" >
+        #{seatnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null" >
+        #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardFront != null" >
+        #{identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardBack != null" >
+        #{identityCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardGroup != null" >
+        #{identityCardGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="county != null" >
+        #{county,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfoExample" resultType="java.lang.Integer" >
+    select count(*) from fx_sd_user_agentinfo
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_sd_user_agentinfo
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.mobile != null" >
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seatnumber != null" >
+        seatnumber = #{record.seatnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realname != null" >
+        realname = #{record.realname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enterprisename != null" >
+        enterprisename = #{record.enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardNo != null" >
+        identity_card_no = #{record.identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardFront != null" >
+        identity_card_front = #{record.identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardBack != null" >
+        identity_card_back = #{record.identityCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCardGroup != null" >
+        identity_card_group = #{record.identityCardGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.county != null" >
+        county = #{record.county,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_sd_user_agentinfo
+    set id = #{record.id,jdbcType=BIGINT},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      seatnumber = #{record.seatnumber,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
+      enterprisename = #{record.enterprisename,jdbcType=VARCHAR},
+      identity_card_no = #{record.identityCardNo,jdbcType=VARCHAR},
+      identity_card_front = #{record.identityCardFront,jdbcType=VARCHAR},
+      identity_card_back = #{record.identityCardBack,jdbcType=VARCHAR},
+      identity_card_group = #{record.identityCardGroup,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      county = #{record.county,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    update fx_sd_user_agentinfo
+    <set >
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="seatnumber != null" >
+        seatnumber = #{seatnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardNo != null" >
+        identity_card_no = #{identityCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardFront != null" >
+        identity_card_front = #{identityCardFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardBack != null" >
+        identity_card_back = #{identityCardBack,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCardGroup != null" >
+        identity_card_group = #{identityCardGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="county != null" >
+        county = #{county,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxSdUserAgentinfo" >
+    update fx_sd_user_agentinfo
+    set mobile = #{mobile,jdbcType=VARCHAR},
+      seatnumber = #{seatnumber,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      identity_card_no = #{identityCardNo,jdbcType=VARCHAR},
+      identity_card_front = #{identityCardFront,jdbcType=VARCHAR},
+      identity_card_back = #{identityCardBack,jdbcType=VARCHAR},
+      identity_card_group = #{identityCardGroup,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      county = #{county,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

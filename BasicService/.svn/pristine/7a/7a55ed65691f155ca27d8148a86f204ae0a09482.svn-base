@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxDocumentMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxDocument" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="CHAR" />
+    <result column="title" property="title" jdbcType="CHAR" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="description" property="description" jdbcType="CHAR" />
+    <result column="root" property="root" jdbcType="INTEGER" />
+    <result column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="model_id" property="modelId" jdbcType="TINYINT" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="position" property="position" jdbcType="SMALLINT" />
+    <result column="link_id" property="linkId" jdbcType="INTEGER" />
+    <result column="cover_id" property="coverId" jdbcType="INTEGER" />
+    <result column="display" property="display" jdbcType="TINYINT" />
+    <result column="deadline" property="deadline" jdbcType="INTEGER" />
+    <result column="attach" property="attach" jdbcType="TINYINT" />
+    <result column="view" property="view" jdbcType="INTEGER" />
+    <result column="comment" property="comment" jdbcType="INTEGER" />
+    <result column="extend" property="extend" jdbcType="INTEGER" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, uid, name, title, category_id, description, root, pid, model_id, type, position, 
+    link_id, cover_id, display, deadline, attach, view, comment, extend, level, create_time, 
+    update_time, status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_document
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_document
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fx_document
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentExample" >
+    delete from fx_document
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxDocument" >
+    insert into fx_document (id, uid, name, title, 
+      category_id, description, root, 
+      pid, model_id, type, 
+      position, link_id, cover_id, 
+      display, deadline, attach, 
+      view, comment, extend, 
+      level, create_time, update_time, 
+      status)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{name,jdbcType=CHAR}, #{title,jdbcType=CHAR}, 
+      #{categoryId,jdbcType=INTEGER}, #{description,jdbcType=CHAR}, #{root,jdbcType=INTEGER}, 
+      #{pid,jdbcType=INTEGER}, #{modelId,jdbcType=TINYINT}, #{type,jdbcType=TINYINT}, 
+      #{position,jdbcType=SMALLINT}, #{linkId,jdbcType=INTEGER}, #{coverId,jdbcType=INTEGER}, 
+      #{display,jdbcType=TINYINT}, #{deadline,jdbcType=INTEGER}, #{attach,jdbcType=TINYINT}, 
+      #{view,jdbcType=INTEGER}, #{comment,jdbcType=INTEGER}, #{extend,jdbcType=INTEGER}, 
+      #{level,jdbcType=INTEGER}, #{createTime,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, 
+      #{status,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxDocument" >
+    insert into fx_document
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="root != null" >
+        root,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="modelId != null" >
+        model_id,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="position != null" >
+        position,
+      </if>
+      <if test="linkId != null" >
+        link_id,
+      </if>
+      <if test="coverId != null" >
+        cover_id,
+      </if>
+      <if test="display != null" >
+        display,
+      </if>
+      <if test="deadline != null" >
+        deadline,
+      </if>
+      <if test="attach != null" >
+        attach,
+      </if>
+      <if test="view != null" >
+        view,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="extend != null" >
+        extend,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=CHAR},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=CHAR},
+      </if>
+      <if test="root != null" >
+        #{root,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=TINYINT},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="position != null" >
+        #{position,jdbcType=SMALLINT},
+      </if>
+      <if test="linkId != null" >
+        #{linkId,jdbcType=INTEGER},
+      </if>
+      <if test="coverId != null" >
+        #{coverId,jdbcType=INTEGER},
+      </if>
+      <if test="display != null" >
+        #{display,jdbcType=TINYINT},
+      </if>
+      <if test="deadline != null" >
+        #{deadline,jdbcType=INTEGER},
+      </if>
+      <if test="attach != null" >
+        #{attach,jdbcType=TINYINT},
+      </if>
+      <if test="view != null" >
+        #{view,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=INTEGER},
+      </if>
+      <if test="extend != null" >
+        #{extend,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxDocumentExample" resultType="java.lang.Integer" >
+    select count(*) from fx_document
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_document
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=CHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=CHAR},
+      </if>
+      <if test="record.categoryId != null" >
+        category_id = #{record.categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=CHAR},
+      </if>
+      <if test="record.root != null" >
+        root = #{record.root,jdbcType=INTEGER},
+      </if>
+      <if test="record.pid != null" >
+        pid = #{record.pid,jdbcType=INTEGER},
+      </if>
+      <if test="record.modelId != null" >
+        model_id = #{record.modelId,jdbcType=TINYINT},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=TINYINT},
+      </if>
+      <if test="record.position != null" >
+        position = #{record.position,jdbcType=SMALLINT},
+      </if>
+      <if test="record.linkId != null" >
+        link_id = #{record.linkId,jdbcType=INTEGER},
+      </if>
+      <if test="record.coverId != null" >
+        cover_id = #{record.coverId,jdbcType=INTEGER},
+      </if>
+      <if test="record.display != null" >
+        display = #{record.display,jdbcType=TINYINT},
+      </if>
+      <if test="record.deadline != null" >
+        deadline = #{record.deadline,jdbcType=INTEGER},
+      </if>
+      <if test="record.attach != null" >
+        attach = #{record.attach,jdbcType=TINYINT},
+      </if>
+      <if test="record.view != null" >
+        view = #{record.view,jdbcType=INTEGER},
+      </if>
+      <if test="record.comment != null" >
+        comment = #{record.comment,jdbcType=INTEGER},
+      </if>
+      <if test="record.extend != null" >
+        extend = #{record.extend,jdbcType=INTEGER},
+      </if>
+      <if test="record.level != null" >
+        level = #{record.level,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_document
+    set id = #{record.id,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=CHAR},
+      title = #{record.title,jdbcType=CHAR},
+      category_id = #{record.categoryId,jdbcType=INTEGER},
+      description = #{record.description,jdbcType=CHAR},
+      root = #{record.root,jdbcType=INTEGER},
+      pid = #{record.pid,jdbcType=INTEGER},
+      model_id = #{record.modelId,jdbcType=TINYINT},
+      type = #{record.type,jdbcType=TINYINT},
+      position = #{record.position,jdbcType=SMALLINT},
+      link_id = #{record.linkId,jdbcType=INTEGER},
+      cover_id = #{record.coverId,jdbcType=INTEGER},
+      display = #{record.display,jdbcType=TINYINT},
+      deadline = #{record.deadline,jdbcType=INTEGER},
+      attach = #{record.attach,jdbcType=TINYINT},
+      view = #{record.view,jdbcType=INTEGER},
+      comment = #{record.comment,jdbcType=INTEGER},
+      extend = #{record.extend,jdbcType=INTEGER},
+      level = #{record.level,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=TINYINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxDocument" >
+    update fx_document
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=CHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=CHAR},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=CHAR},
+      </if>
+      <if test="root != null" >
+        root = #{root,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="modelId != null" >
+        model_id = #{modelId,jdbcType=TINYINT},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="position != null" >
+        position = #{position,jdbcType=SMALLINT},
+      </if>
+      <if test="linkId != null" >
+        link_id = #{linkId,jdbcType=INTEGER},
+      </if>
+      <if test="coverId != null" >
+        cover_id = #{coverId,jdbcType=INTEGER},
+      </if>
+      <if test="display != null" >
+        display = #{display,jdbcType=TINYINT},
+      </if>
+      <if test="deadline != null" >
+        deadline = #{deadline,jdbcType=INTEGER},
+      </if>
+      <if test="attach != null" >
+        attach = #{attach,jdbcType=TINYINT},
+      </if>
+      <if test="view != null" >
+        view = #{view,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=INTEGER},
+      </if>
+      <if test="extend != null" >
+        extend = #{extend,jdbcType=INTEGER},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxDocument" >
+    update fx_document
+    set uid = #{uid,jdbcType=INTEGER},
+      name = #{name,jdbcType=CHAR},
+      title = #{title,jdbcType=CHAR},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      description = #{description,jdbcType=CHAR},
+      root = #{root,jdbcType=INTEGER},
+      pid = #{pid,jdbcType=INTEGER},
+      model_id = #{modelId,jdbcType=TINYINT},
+      type = #{type,jdbcType=TINYINT},
+      position = #{position,jdbcType=SMALLINT},
+      link_id = #{linkId,jdbcType=INTEGER},
+      cover_id = #{coverId,jdbcType=INTEGER},
+      display = #{display,jdbcType=TINYINT},
+      deadline = #{deadline,jdbcType=INTEGER},
+      attach = #{attach,jdbcType=TINYINT},
+      view = #{view,jdbcType=INTEGER},
+      comment = #{comment,jdbcType=INTEGER},
+      extend = #{extend,jdbcType=INTEGER},
+      level = #{level,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

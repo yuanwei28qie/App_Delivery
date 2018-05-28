@@ -1,0 +1,50 @@
+package com.microsilver.mrcard.basicservice.model;
+
+import lombok.Data;
+
+@Data
+public class FxSdUserMember {
+    private Long id;
+
+    private String mobile;
+
+    private String realname;
+
+    private String nickname;
+
+    private String openid;
+
+    private String pwd;
+
+    private String salt;
+
+    private Integer servicescor;
+
+    private Integer levelscore;
+
+    private Long createtime;
+
+    private String avatar;
+
+    private Byte status;
+
+    private String openidQq;
+
+    private String openidWx;
+
+    private Long financeId;
+
+    private Long referee;
+
+    private String identifier;
+
+    private String token;
+
+    private String imToken;
+
+    private String imAccout;
+
+    private String content;
+
+   
+}

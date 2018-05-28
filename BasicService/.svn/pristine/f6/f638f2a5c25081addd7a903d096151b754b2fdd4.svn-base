@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.microsilver.mrcard.basicservice.dao.FxAttributeMapper" >
+  <resultMap id="BaseResultMap" type="com.microsilver.mrcard.basicservice.model.FxAttribute" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="field" property="field" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="is_show" property="isShow" jdbcType="BIT" />
+    <result column="extra" property="extra" jdbcType="VARCHAR" />
+    <result column="model_id" property="modelId" jdbcType="INTEGER" />
+    <result column="is_must" property="isMust" jdbcType="BIT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="update_time" property="updateTime" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="validate_rule" property="validateRule" jdbcType="VARCHAR" />
+    <result column="validate_time" property="validateTime" jdbcType="BIT" />
+    <result column="error_info" property="errorInfo" jdbcType="VARCHAR" />
+    <result column="validate_type" property="validateType" jdbcType="VARCHAR" />
+    <result column="auto_rule" property="autoRule" jdbcType="VARCHAR" />
+    <result column="auto_time" property="autoTime" jdbcType="BIT" />
+    <result column="auto_type" property="autoType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, title, field, type, value, remark, is_show, extra, model_id, is_must, status, 
+    update_time, create_time, validate_rule, validate_time, error_info, validate_type, 
+    auto_rule, auto_time, auto_type
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.microsilver.mrcard.basicservice.model.FxAttributeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from fx_attribute
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from fx_attribute
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fx_attribute
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxAttributeExample" >
+    delete from fx_attribute
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.microsilver.mrcard.basicservice.model.FxAttribute" >
+    insert into fx_attribute (id, name, title, 
+      field, type, value, 
+      remark, is_show, extra, 
+      model_id, is_must, status, 
+      update_time, create_time, validate_rule, 
+      validate_time, error_info, validate_type, 
+      auto_rule, auto_time, auto_type
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{field,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{isShow,jdbcType=BIT}, #{extra,jdbcType=VARCHAR}, 
+      #{modelId,jdbcType=INTEGER}, #{isMust,jdbcType=BIT}, #{status,jdbcType=TINYINT}, 
+      #{updateTime,jdbcType=INTEGER}, #{createTime,jdbcType=INTEGER}, #{validateRule,jdbcType=VARCHAR}, 
+      #{validateTime,jdbcType=BIT}, #{errorInfo,jdbcType=VARCHAR}, #{validateType,jdbcType=VARCHAR}, 
+      #{autoRule,jdbcType=VARCHAR}, #{autoTime,jdbcType=BIT}, #{autoType,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.microsilver.mrcard.basicservice.model.FxAttribute" >
+    insert into fx_attribute
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="field != null" >
+        field,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="value != null" >
+        value,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="isShow != null" >
+        is_show,
+      </if>
+      <if test="extra != null" >
+        extra,
+      </if>
+      <if test="modelId != null" >
+        model_id,
+      </if>
+      <if test="isMust != null" >
+        is_must,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="validateRule != null" >
+        validate_rule,
+      </if>
+      <if test="validateTime != null" >
+        validate_time,
+      </if>
+      <if test="errorInfo != null" >
+        error_info,
+      </if>
+      <if test="validateType != null" >
+        validate_type,
+      </if>
+      <if test="autoRule != null" >
+        auto_rule,
+      </if>
+      <if test="autoTime != null" >
+        auto_time,
+      </if>
+      <if test="autoType != null" >
+        auto_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null" >
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null" >
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isShow != null" >
+        #{isShow,jdbcType=BIT},
+      </if>
+      <if test="extra != null" >
+        #{extra,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=INTEGER},
+      </if>
+      <if test="isMust != null" >
+        #{isMust,jdbcType=BIT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="validateRule != null" >
+        #{validateRule,jdbcType=VARCHAR},
+      </if>
+      <if test="validateTime != null" >
+        #{validateTime,jdbcType=BIT},
+      </if>
+      <if test="errorInfo != null" >
+        #{errorInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="validateType != null" >
+        #{validateType,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRule != null" >
+        #{autoRule,jdbcType=VARCHAR},
+      </if>
+      <if test="autoTime != null" >
+        #{autoTime,jdbcType=BIT},
+      </if>
+      <if test="autoType != null" >
+        #{autoType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.microsilver.mrcard.basicservice.model.FxAttributeExample" resultType="java.lang.Integer" >
+    select count(*) from fx_attribute
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update fx_attribute
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.field != null" >
+        field = #{record.field,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.value != null" >
+        value = #{record.value,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isShow != null" >
+        is_show = #{record.isShow,jdbcType=BIT},
+      </if>
+      <if test="record.extra != null" >
+        extra = #{record.extra,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modelId != null" >
+        model_id = #{record.modelId,jdbcType=INTEGER},
+      </if>
+      <if test="record.isMust != null" >
+        is_must = #{record.isMust,jdbcType=BIT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.validateRule != null" >
+        validate_rule = #{record.validateRule,jdbcType=VARCHAR},
+      </if>
+      <if test="record.validateTime != null" >
+        validate_time = #{record.validateTime,jdbcType=BIT},
+      </if>
+      <if test="record.errorInfo != null" >
+        error_info = #{record.errorInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.validateType != null" >
+        validate_type = #{record.validateType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.autoRule != null" >
+        auto_rule = #{record.autoRule,jdbcType=VARCHAR},
+      </if>
+      <if test="record.autoTime != null" >
+        auto_time = #{record.autoTime,jdbcType=BIT},
+      </if>
+      <if test="record.autoType != null" >
+        auto_type = #{record.autoType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update fx_attribute
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      title = #{record.title,jdbcType=VARCHAR},
+      field = #{record.field,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      value = #{record.value,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      is_show = #{record.isShow,jdbcType=BIT},
+      extra = #{record.extra,jdbcType=VARCHAR},
+      model_id = #{record.modelId,jdbcType=INTEGER},
+      is_must = #{record.isMust,jdbcType=BIT},
+      status = #{record.status,jdbcType=TINYINT},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      validate_rule = #{record.validateRule,jdbcType=VARCHAR},
+      validate_time = #{record.validateTime,jdbcType=BIT},
+      error_info = #{record.errorInfo,jdbcType=VARCHAR},
+      validate_type = #{record.validateType,jdbcType=VARCHAR},
+      auto_rule = #{record.autoRule,jdbcType=VARCHAR},
+      auto_time = #{record.autoTime,jdbcType=BIT},
+      auto_type = #{record.autoType,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.microsilver.mrcard.basicservice.model.FxAttribute" >
+    update fx_attribute
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null" >
+        field = #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null" >
+        value = #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isShow != null" >
+        is_show = #{isShow,jdbcType=BIT},
+      </if>
+      <if test="extra != null" >
+        extra = #{extra,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        model_id = #{modelId,jdbcType=INTEGER},
+      </if>
+      <if test="isMust != null" >
+        is_must = #{isMust,jdbcType=BIT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="validateRule != null" >
+        validate_rule = #{validateRule,jdbcType=VARCHAR},
+      </if>
+      <if test="validateTime != null" >
+        validate_time = #{validateTime,jdbcType=BIT},
+      </if>
+      <if test="errorInfo != null" >
+        error_info = #{errorInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="validateType != null" >
+        validate_type = #{validateType,jdbcType=VARCHAR},
+      </if>
+      <if test="autoRule != null" >
+        auto_rule = #{autoRule,jdbcType=VARCHAR},
+      </if>
+      <if test="autoTime != null" >
+        auto_time = #{autoTime,jdbcType=BIT},
+      </if>
+      <if test="autoType != null" >
+        auto_type = #{autoType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.microsilver.mrcard.basicservice.model.FxAttribute" >
+    update fx_attribute
+    set name = #{name,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      field = #{field,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      value = #{value,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      is_show = #{isShow,jdbcType=BIT},
+      extra = #{extra,jdbcType=VARCHAR},
+      model_id = #{modelId,jdbcType=INTEGER},
+      is_must = #{isMust,jdbcType=BIT},
+      status = #{status,jdbcType=TINYINT},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=INTEGER},
+      validate_rule = #{validateRule,jdbcType=VARCHAR},
+      validate_time = #{validateTime,jdbcType=BIT},
+      error_info = #{errorInfo,jdbcType=VARCHAR},
+      validate_type = #{validateType,jdbcType=VARCHAR},
+      auto_rule = #{autoRule,jdbcType=VARCHAR},
+      auto_time = #{autoTime,jdbcType=BIT},
+      auto_type = #{autoType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
